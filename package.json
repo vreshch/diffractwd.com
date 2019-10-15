@@ -1,0 +1,66 @@
+{
+    "name": "diffractwd.com",
+    "version": "4.0.0",
+    "private": true,
+    "description": "DiffractWD Website v4.0",
+    "author": {
+        "name": "Volodymyr Vreshch",
+        "email": "<vreshch@gmail.com>",
+        "url": "http://vreshch.com"
+    },
+    "homepage": "http://diffractwd.com",
+    "license": {
+        "type": "Apache-2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "scripts": {
+        "verify": "npm run lint",
+        "lint": "tslint -c tslint.json -p tsconfig.json 'src/**/*.tsx'",
+        "lintfix": "tslint -c tslint.json -p tsconfig.json 'src/**/*.tsx' --fix",
+        "backend": "ts-node src/backend/run.ts",
+        "nodemon": "nodemon -e ts -w ./src -x ts-node src/backend/run.ts",
+        "serve": "webpack-serve  --config ./webpack.config.base.js",
+        "build": "npm run build:backend && npm run build:frontend",
+        "build:frontend": "webpack-cli --config webpack.config.base.js --mode production",
+        "build:backend": "tsc",
+        "start:build": "node ./dist/backend/run.js"
+    },
+    "dependencies": {
+        "autoprefixer": "9.1.5",
+        "bluebird": "3.5.2",
+        "body-parser": "1.18.3",
+        "bootstrap": "4.1.3",
+        "classnames": "2.2.6",
+        "connect-timeout": "1.9.0",
+        "cross-env": "5.2.0",
+        "express": "4.16.3",
+        "history": "4.7.2",
+        "lodash.escape": "4.0.1",
+        "react": "16.5.0",
+        "react-dom": "16.5.0",
+        "react-router": "4.3.1",
+        "react-router-dom": "4.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "10.9.4",
+        "awesome-typescript-loader": "5.2.1",
+        "copy-webpack-plugin": "4.5.2",
+        "css-loader": "1.0.0",
+        "extract-text-webpack-plugin": "4.0.0-beta.0",
+        "file-loader": "2.0.0",
+        "html-webpack-plugin": "3.2.0",
+        "less": "3.8.1",
+        "less-loader": "4.1.0",
+        "nodemon": "1.18.4",
+        "postcss-loader": "3.0.0",
+        "style-loader": "0.23.0",
+        "ts-node": "7.0.1",
+        "tslint": "5.11.0",
+        "tslint-react": "3.6.0",
+        "typescript": "3.0.3",
+        "url-loader": "1.1.1",
+        "webpack": "4.18.0",
+        "webpack-cli": "3.1.0",
+        "webpack-serve": "2.0.2"
+    }
+}
