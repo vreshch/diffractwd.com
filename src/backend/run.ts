@@ -2,7 +2,7 @@ import {
   run,
 } from "./app";
 
-const PORT = (process.env['DIFFRACTWD_WEB_PORT'] || '8010' || '').trim();
+const PORT = (process.env['PORT'] || '8080' || '').trim();
 
 run({PORT}).then(() => {
     // tslint:disable-next-line

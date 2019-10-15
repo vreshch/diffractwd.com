@@ -8,6 +8,6 @@ COPY package-lock.json /app
 RUN npm install
 COPY . /app
 RUN npm run build
-EXPOSE 8010
+EXPOSE 8080
 HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:8010/hc || exit 1
 CMD ["node", "dist/backend/run.js"]
