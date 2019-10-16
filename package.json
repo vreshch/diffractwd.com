@@ -19,7 +19,7 @@
         "lintfix": "tslint -c tslint.json -p tsconfig.json 'src/**/*.tsx' --fix",
         "backend": "ts-node src/backend/run.ts",
         "nodemon": "nodemon -e ts -w ./src -x ts-node src/backend/run.ts",
-        "serve": "webpack-serve  --config ./webpack.config.base.js",
+        "serve": "webpack-dev-server  --config ./webpack.config.base.js",
         "build": "npm run build:backend && npm run build:frontend",
         "build:frontend": "webpack-cli --config webpack.config.base.js --mode production",
         "build:backend": "tsc",
@@ -62,6 +62,6 @@
         "url-loader": "2.2.0",
         "webpack": "4.41.2",
         "webpack-cli": "3.3.9",
-        "webpack-serve": "2.0.2"
+        "webpack-dev-server": "3.8.2"
     }
 }
