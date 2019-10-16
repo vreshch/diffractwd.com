@@ -1,6 +1,6 @@
 import * as React from "react";
 import { renderToString } from "react-dom/server";
-import StaticRouter from "react-router-dom/StaticRouter";
+import { StaticRouter } from "react-router-dom";
 import { healthCheck, statusCheck } from "./healthcheck";
 
 import { Routes } from "../common/routes";
