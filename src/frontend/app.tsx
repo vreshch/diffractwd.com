@@ -1,3 +1,4 @@
+import * as ReactGA from 'react-ga';
 import { createBrowserHistory } from "history";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -8,11 +9,23 @@ import { getMetaDataFromState } from "../common/utils";
 
 const browserHistory = createBrowserHistory();
 
-browserHistory.listen((ev) => {
+
+if (process.env.NODE_ENV !== 'development') {
+    ReactGA.initialize('UA-125802766-2');
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+}
+
+browserHistory.listen((location) => {
     const meta = getMetaDataFromState({
-        route: ev.pathname,
+        route: location.pathname,
     });
     document.title = meta.title || "";
+
+    if (process.env.NODE_ENV !== 'development') {
+        ReactGA.set({ page: location.pathname });
+        ReactGA.pageview(location.pathname);
+    }
 });
 
 ReactDOM.render(

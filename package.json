@@ -40,7 +40,8 @@
         "react": "16.10.2",
         "react-dom": "16.10.2",
         "react-router": "5.1.2",
-        "react-router-dom": "5.1.2"
+        "react-router-dom": "5.1.2",
+        "react-ga": "2.5.3"
     },
     "devDependencies": {
         "@types/node": "12.11.1",
