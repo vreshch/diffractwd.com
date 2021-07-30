@@ -41,6 +41,6 @@ jobs:
     - name: Push Docker image
       run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/diffractwd-com:latest
 
-#    - name: Update Infrastructure
-#      run: terraform init && terraform plan && terraform apply -auto-approve -lock=false
+    - name: Update Infrastructure
+      run: terraform init && terraform plan && terraform apply -auto-approve -lock=false
 
