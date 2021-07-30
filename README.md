@@ -32,15 +32,15 @@ npm run lint
 ## Docker commands
 * Build Docker file locally
 ```bash
-docker build -t diffractwd.com .
+docker build -t gcr.io/diffractwd-com-321322/diffractwd-com:latest .
 ```
 * Start Docker file
 ```bash
-docker run --network=host diffractwd.com
+docker run --network=host gcr.io/diffractwd-com-321322/diffractwd-com:latest
 ```
 * Push docker to registry
 ```bash
-docker login & docker push diffractwd.com
+docker login & docker push gcr.io/diffractwd-com-321322/diffractwd-com:latest
 ```
 ## Creating infrastructure
 * Install gcloud according to [instructions](https://cloud.google.com/sdk/docs/install)
