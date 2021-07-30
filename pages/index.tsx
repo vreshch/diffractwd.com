@@ -22,7 +22,7 @@ export default function MainPage() {
                 </div>
 
                 <p><i>Source Code</i> of DiffractWD <i>is open</i> for public, and build based on Extendable system.
-                The system provide developers with interfaces to build their own addin's, and extend minimal functions.</p>
+                The system provide developers with interfaces to build their own addin&#39;s, and extend minimal functions.</p>
 
                 <p>Please note, DiffractWD is far from complete. Program contain Autoupdate and Error Report
                     modules - and will <i>let you to have the latest stable version</i> installed.
