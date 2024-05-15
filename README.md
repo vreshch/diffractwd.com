@@ -43,20 +43,20 @@ npm run lint
 * Build Docker file locally
 
 ```bash
-docker build -t gcr.io/diffractwd-com-321322/diffractwd-com:latest .
+docker build -t europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest .
 ```
 
 * Start Docker file
 
 ```bash
-docker run --network=host gcr.io/diffractwd-com-321322/diffractwd-com:latest
+docker run --network=host europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest
 ```
 
 * Push docker to registry
 
 ```bash
-docker login & docker push gcr.io/diffractwd-com-321322/diffractwd-com:latest
-```
+docker login & docker push europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest
+
 
 ## Creating infrastructure
 
@@ -67,7 +67,7 @@ docker login & docker push gcr.io/diffractwd-com-321322/diffractwd-com:latest
 gcloud auth application-default login
 ```
 
-* Create Goolge Cloud project (use your own PROJECT_ID & PROJECT_NAME)
+* Create Google Cloud project (use your own PROJECT_ID & PROJECT_NAME)
 
 ```bash
 gcloud projects create "PROJECT_ID" --name="PROJECT_NAME"
