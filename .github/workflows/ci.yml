@@ -7,15 +7,16 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
 
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v4
               with:
                   node-version: "14"
 
             - name: Install dependencies
               run: npm ci
+
             - name: Lint
               run: npm run lint
 
@@ -23,20 +24,27 @@ jobs:
               run: npm run build
 
             - name: Set up Cloud SDK
-              uses: google-github-actions/setup-gcloud@main
+              uses: 'google-github-actions/auth@v2'
               with:
-                  project_id: ${{ secrets.GCP_PROJECT_ID }}
-                  service_account_key: ${{ secrets.GCP_SA_KEY }}
-                  export_default_credentials: true
+                credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+            - name: Set up Cloud SDK
+              uses: google-github-actions/setup-gcloud@v2
+
+            - name: 'Use gcloud CLI'
+               run: 'gcloud info'
+
+            - name: 'Use gcloud CLI'
+              run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
 
             - name: Configure Docker
               run: docker info && gcloud auth configure-docker
 
             - name: Build Docker
-              run: docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/diffractwd-com:latest .
+              run: docker build -t ${{ secrets.GCP_ARTIFACTORY_REGISTRY }}/${{ secrets.GCP_PROJECT_ID }}/diffractwd/diffractwd-com:latest .
 
             - name: Push Docker image
-              run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/diffractwd-com:latest
+              run: docker push ${{ secrets.GCP_ARTIFACTORY_REGISTRY }}/${{ secrets.GCP_PROJECT_ID }}/diffractwd/diffractwd-com:latest
 
             - name: Update Infrastructure
               run: terraform init && terraform plan && terraform apply -auto-approve -lock=false
