@@ -39,7 +39,7 @@ export default function DownloadsPage() {
                     </dl>
                     <dl>
                         <dt>License</dt>
-                        <dd>DiffractWD is totally free and licensed under the <Link href="/license"><a>BSD License</a></Link>.</dd>
+                        <dd>DiffractWD is totally free and licensed under the <Link href="/license">BSD License</Link>.</dd>
                     </dl>
                 </div>
             </div>

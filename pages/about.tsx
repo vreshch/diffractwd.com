@@ -48,7 +48,7 @@ export default function AboutPage() {
                         <dd>Core is base on Sharp Develop, which were proved can be easily scale up.</dd>
                         <dd>Program can be easily extended through Addin system.</dd>
                         <dd>Licensed under terms of&nbsp;
-                            <Link href="/license"><a>BSD License.</a></Link>
+                            <Link href="/license">BSD License.</Link>
                         </dd>
                     </dl>
                     <dl>

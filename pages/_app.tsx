@@ -1,26 +1,23 @@
-import React, { useState, Children } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { withRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import classNames from 'classnames';
 import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { usePathname } from 'next/navigation';
 
 
-const ActiveLink = withRouter( (({ router, children, ...props }: any) => {
-    const child = Children.only(children);
-
-    let className = child.props.className || '';
-    if (router.pathname === props.href && props.activeClassName) {
-      className = `${className} ${props.activeClassName}`.trim();
+const ActiveLink = ({...props}: any) => {
+    const pathname = usePathname();
+    let className = props.className || '';
+    if (pathname === props.href && props.activeClassName) {
+        className = `${className} ${props.activeClassName}`.trim();
     }
-
     delete props.activeClassName;
 
-    return <Link {...props}>{React.cloneElement(child, { className })}</Link>;
-}));
-
+    return <Link {...props} className={className}></Link>;
+}
 
 const Sidebar = ()=> {
     const [closed, setClosed] = useState(true);
@@ -36,13 +33,13 @@ const Sidebar = ()=> {
                 <button className="navbar-toggler" onClick={()=> setClosed(!closed)} >☰</button>
             </div>
             <div className="jcw-sidebar-wrap">
-                <ActiveLink exact={true} href="/" activeClassName="active"><a className="jcw-sidebar-item">Home</a></ActiveLink>
-                <ActiveLink href="/news" activeClassName="active"><a className="jcw-sidebar-item">News</a></ActiveLink>
-                <ActiveLink href="/about" activeClassName="active"><a className="jcw-sidebar-item">About</a></ActiveLink>
-                <ActiveLink href="/screenshots" activeClassName="active"><a className="jcw-sidebar-item">Screenshots</a></ActiveLink>
-                <ActiveLink href="/downloads" activeClassName="active"><a className="jcw-sidebar-item">Downloads</a></ActiveLink>
-                <ActiveLink href="/quick_manual" activeClassName="active"><a className="jcw-sidebar-item">Quick Manual</a></ActiveLink>
-                <ActiveLink href="/support" activeClassName="active"><a className="jcw-sidebar-item">Support</a></ActiveLink>
+                <ActiveLink href="/" className="jcw-sidebar-item" activeClassName="active">Home</ActiveLink>
+                <ActiveLink href="/news" className="jcw-sidebar-item" activeClassName="active">News</ActiveLink>
+                <ActiveLink href="/about" className="jcw-sidebar-item" activeClassName="active">About</ActiveLink>
+                <ActiveLink href="/screenshots" className="jcw-sidebar-item" activeClassName="active">Screenshots</ActiveLink>
+                <ActiveLink href="/downloads" className="jcw-sidebar-item" activeClassName="active">Downloads</ActiveLink>
+                <ActiveLink href="/quick_manual" className="jcw-sidebar-item" activeClassName="active">Quick Manual</ActiveLink>
+                <ActiveLink href="/support" className="jcw-sidebar-item" activeClassName="active">Support</ActiveLink>
             </div>
         </div>
     )
