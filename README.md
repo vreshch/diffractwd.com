@@ -38,6 +38,26 @@ npm start
 npm run lint
 ```
 
+## E2E tests
+
+* Install playwright
+
+```bash
+    npm install playwright@latest
+```
+
+* Run test with command line
+
+```bash
+    npm test
+```
+
+* Run test locally with UI
+
+```bash
+    npm test:ui
+```
+
 ## Docker commands
 
 * Build Docker file locally

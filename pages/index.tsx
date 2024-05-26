@@ -1,8 +1,12 @@
+import Head from 'next/head';
 import Image from 'next/image';
 
 export default function MainPage() {
     return (
         <div>
+            <Head>
+                <title>DiffractWD - Overview</title>
+            </Head>
             <h1>Overview</h1>
             <hr />
             <div className="app-text">

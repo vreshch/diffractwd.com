@@ -1,9 +1,13 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function DownloadsPage() {
         return (
             <div>
+            <Head>
+                <title>DiffractWD - Downloads</title>
+            </Head>
               <h1>Downloads</h1>
                 <hr />
                 <div className="app-text">
