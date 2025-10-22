@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  web:
+    image: ghcr.io/vreshch/diffractwd.com:latest
+    restart: unless-stopped
+    networks:
+      - traefik-public
+    deploy:
+      replicas: 1
+      update_config:
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+      labels:
+        # Enable Traefik
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.constraint-label=traefik-public
+        
+        # HTTP Router (redirect to HTTPS, but allow ACME challenges)
+        - traefik.http.routers.diffractwd-http.rule=Host(`diffractwd.com`) || Host(`www.diffractwd.com`)
+        - traefik.http.routers.diffractwd-http.entrypoints=http
+        - traefik.http.routers.diffractwd-http.middlewares=https-redirect
+        
+        # Create HTTPS redirect middleware that allows ACME challenges
+        - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+        - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+        
+        # HTTPS Router
+        - traefik.http.routers.diffractwd-https.rule=Host(`diffractwd.com`) || Host(`www.diffractwd.com`)
+        - traefik.http.routers.diffractwd-https.entrypoints=https
+        - traefik.http.routers.diffractwd-https.tls=true
+        - traefik.http.routers.diffractwd-https.tls.certresolver=letsencrypt
+        
+        # Service configuration
+        - traefik.http.services.diffractwd.loadbalancer.server.port=3000
+      
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 128M
+    
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  traefik-public:
+    external: true

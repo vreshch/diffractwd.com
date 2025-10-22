@@ -1,50 +1,49 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches-ignore: [master]  # Master uses deploy.yml workflow
+  pull_request:
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    name: 🏗️ Build & Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
 
-        steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
 
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "22"
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: 'npm'
 
-            - name: Install dependencies
-              run: npm ci
+      - name: 📦 Install dependencies
+        run: npm ci
 
-            - name: Lint
-              run: npm run lint
+      - name: 🔎 Lint
+        run: npm run lint
 
-            - name: Build
-              run: npm run build
+      - name: 🏗️ Build
+        run: npm run build
 
-            - name: Set up Cloud SDK
-              uses: "google-github-actions/auth@v2"
-              with:
-                  credentials_json: "${{ secrets.GCP_CREDENTIALS }}"
+      - name: 🧪 Run tests
+        run: npm run test
 
-            - name: Set up Cloud SDK
-              uses: google-github-actions/setup-gcloud@v2
+      - name: 🐳 Build Docker image
+        run: docker build -t diffractwd-com:ci-${{ github.sha }} .
 
-            - name: "Use gcloud CLI"
-              run: "gcloud info"
-
-            - name: "Use gcloud CLI"
-              run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
-
-            - name: Configure Docker
-              run: docker info && gcloud auth configure-docker europe-west3-docker.pkg.dev
-
-            - name: Build Docker
-              run: docker build -t ${{ secrets.GCP_ARTIFACTORY_REGISTRY }}/${{ secrets.GCP_PROJECT_ID }}/diffractwd/diffractwd-com:latest .
-
-            - name: Push Docker image
-              run: docker push ${{ secrets.GCP_ARTIFACTORY_REGISTRY }}/${{ secrets.GCP_PROJECT_ID }}/diffractwd/diffractwd-com:latest
-
-            - name: Update Infrastructure
-              run: terraform init && terraform plan && terraform apply -auto-approve -lock=false
+      - name: 📊 CI Summary
+        if: always()
+        run: |
+          echo "✅ CI Pipeline completed for diffractwd.com"
+          echo "📦 Commit: ${{ github.sha }}"
+          echo "🌿 Branch: ${{ github.ref_name }}"
+          echo "🏗️ Docker image: diffractwd-com:ci-${{ github.sha }}"
