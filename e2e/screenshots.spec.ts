@@ -11,12 +11,26 @@ const pages = [
   { path: '/license', name: 'license' },
 ];
 
-test.describe('page screenshots', () => {
+const MOBILE_VIEWPORT = { width: 375, height: 812 };
+
+test.describe('desktop screenshots', () => {
   for (const { path, name } of pages) {
     test(`${name} page renders correctly`, async ({ page }) => {
       await page.goto(path);
       await expect(page).toHaveTitle(/DiffractWD/);
       await page.screenshot({ path: `e2e/screenshots/${name}.png`, fullPage: true });
+    });
+  }
+});
+
+test.describe('mobile screenshots', () => {
+  test.use({ viewport: MOBILE_VIEWPORT });
+
+  for (const { path, name } of pages) {
+    test(`${name} page renders correctly on mobile`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page).toHaveTitle(/DiffractWD/);
+      await page.screenshot({ path: `e2e/screenshots/${name}-mobile.png`, fullPage: true });
     });
   }
 });
