@@ -3,17 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { clsx } from 'clsx';
-
-const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/news', label: 'News' },
-  { href: '/about', label: 'About' },
-  { href: '/screenshots', label: 'Screenshots' },
-  { href: '/downloads', label: 'Downloads' },
-  { href: '/quick-manual', label: 'Quick Manual' },
-  { href: '/support', label: 'Support' },
-];
+import { cn } from '@/lib/cn';
+import { navItems } from '@/lib/constants';
 
 export function Sidebar() {
   const [closed, setClosed] = useState(true);
@@ -30,7 +21,7 @@ export function Sidebar() {
         </button>
       </div>
       <div
-        className={clsx(
+        className={cn(
           'overflow-hidden transition-all duration-500 md:max-h-none md:overflow-visible',
           closed ? 'max-h-0' : 'max-h-[550px]'
         )}
@@ -39,7 +30,7 @@ export function Sidebar() {
           <Link
             key={href}
             href={href}
-            className={clsx(
+            className={cn(
               'block border-l-3 px-4 py-2 my-0.5 text-primary',
               pathname === href
                 ? 'border-l-sidebar-border bg-sidebar-hover font-semibold'
