@@ -28,13 +28,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="min-h-screen bg-white dark:bg-dark-bg">
+      <body className="flex min-h-screen flex-col bg-[#f0f4f8] dark:bg-dark-bg">
         <Navigation />
-        <main>{children}</main>
-        <footer className="border-t border-border bg-surface py-8 dark:border-dark-border dark:bg-dark-surface">
-          <div className="mx-auto max-w-6xl px-6 text-center text-sm text-muted dark:text-dark-text-secondary">
+        <main className="flex-1">{children}</main>
+        <footer className="border-t border-primary/20 bg-primary py-8 dark:border-dark-border dark:bg-dark-surface">
+          <div className="mx-auto max-w-6xl px-6 text-sm text-white/70 dark:text-dark-text-secondary">
             &copy; {new Date().getFullYear()} Volodymyr D. Vreshch. DiffractWD is free and open
-            source under the BSD License.
+            source under the MIT License.
           </div>
         </footer>
       </body>

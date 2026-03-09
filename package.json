@@ -7,9 +7,9 @@
   "author": {
     "name": "Volodymyr Vreshch",
     "email": "vreshch@gmail.com",
-    "url": "http://vreshch.com"
+    "url": "https://vreshch.com"
   },
-  "homepage": "http://diffractwd.com",
+  "homepage": "https://diffractwd.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vreshch/diffractwd.com.git"
@@ -29,7 +29,8 @@
     "test:unit": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "npx playwright test",
-    "test:e2e:ui": "npx playwright test --ui"
+    "test:e2e:ui": "npx playwright test --ui",
+    "verify": "npx tsc --noEmit && next lint && npm run build && vitest run"
   },
   "dependencies": {
     "clsx": "^2.1.1",

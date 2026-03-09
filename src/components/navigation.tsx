@@ -28,8 +28,8 @@ export function Navigation() {
       className={cn(
         'sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-300',
         scrolled
-          ? 'border-b border-border/60 bg-white/85 shadow-sm backdrop-blur-xl dark:border-dark-border/60 dark:bg-dark-bg/85'
-          : 'border-b border-transparent bg-white dark:bg-dark-bg',
+          ? 'border-b border-border/60 bg-[#f0f4f8]/85 shadow-sm backdrop-blur-xl dark:border-dark-border/60 dark:bg-dark-bg/85'
+          : 'border-b border-transparent bg-[#f0f4f8] dark:bg-dark-bg',
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">

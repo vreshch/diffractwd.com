@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/cn';
 
 export function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -25,16 +26,17 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="group rounded-lg p-2 text-muted transition-colors duration-200 hover:bg-surface-hover hover:text-heading dark:text-dark-text-secondary dark:hover:bg-dark-surface dark:hover:text-dark-text"
+      className="group cursor-pointer rounded-lg p-2 text-muted transition-colors duration-200 hover:bg-surface-hover hover:text-heading dark:text-dark-text-secondary dark:hover:bg-dark-surface dark:hover:text-dark-text"
       aria-label="Toggle theme"
     >
       <div className="relative h-5 w-5 overflow-hidden">
         <svg
-          className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${
+          className={cn(
+            'absolute inset-0 h-5 w-5 transition-all duration-300',
             mounted && dark
               ? 'translate-y-0 rotate-0 opacity-100'
-              : '-translate-y-full rotate-90 opacity-0'
-          }`}
+              : '-translate-y-full rotate-90 opacity-0',
+          )}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -47,11 +49,12 @@ export function ThemeToggle() {
           />
         </svg>
         <svg
-          className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${
+          className={cn(
+            'absolute inset-0 h-5 w-5 transition-all duration-300',
             mounted && !dark
               ? 'translate-y-0 rotate-0 opacity-100'
-              : 'translate-y-full -rotate-90 opacity-0'
-          }`}
+              : 'translate-y-full -rotate-90 opacity-0',
+          )}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

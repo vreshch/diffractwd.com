@@ -7,15 +7,15 @@
 @theme {
   --color-primary: #1e3a5f;
   --color-primary-light: #2b6892;
-  --color-accent: #3b82f6;
+  --color-accent: #2563eb;
   --color-accent-light: #60a5fa;
-  --color-surface: #f8fafc;
-  --color-surface-alt: #f1f5f9;
-  --color-surface-hover: #f1f5f9;
-  --color-heading: #0f172a;
-  --color-body: #334155;
-  --color-muted: #64748b;
-  --color-border: #e2e8f0;
+  --color-surface: #eef2f7;
+  --color-surface-alt: #e3e9f1;
+  --color-surface-hover: #dce3ed;
+  --color-heading: #1e3a5f;
+  --color-body: #374a60;
+  --color-muted: #5a6d82;
+  --color-border: #c2cdd9;
   --color-dark-bg: #0f172a;
   --color-dark-surface: #1e293b;
   --color-dark-surface-alt: #334155;
@@ -32,11 +32,13 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
+html {
+  overflow-y: scroll;
+}
+
 body {
   padding: 0;
   margin: 0;
-  overflow-y: scroll;
   font-family:
     Inter,
     -apple-system,
