@@ -61,18 +61,18 @@ const modules = [
 export default function DocumentationPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="mb-2 text-3xl font-bold text-heading">Documentation</h1>
-      <p className="mb-10 text-muted">
+      <h1 className="mb-2 text-3xl font-bold text-heading dark:text-dark-text">Documentation</h1>
+      <p className="mb-10 text-muted dark:text-dark-text-secondary">
         Learn how to use DiffractWD for powder diffraction analysis.
       </p>
 
       <section className="mb-14">
-        <h2 className="mb-6 text-2xl font-bold text-heading">Quick Start</h2>
+        <h2 className="mb-6 text-2xl font-bold text-heading dark:text-dark-text">Quick Start</h2>
         <div className="space-y-8">
           {steps.map((step) => (
             <div
               key={step.number}
-              className="flex flex-col gap-6 rounded-lg border border-border bg-white p-6 md:flex-row"
+              className="flex flex-col gap-6 rounded-lg border border-border bg-white p-6 md:flex-row dark:border-dark-border dark:bg-dark-surface"
             >
               <div className="flex-shrink-0">
                 <Image
@@ -80,7 +80,7 @@ export default function DocumentationPage() {
                   alt={`Step ${step.number}: ${step.title}`}
                   width={320}
                   height={224}
-                  className="rounded-md border border-border"
+                  className="rounded-md border border-border dark:border-dark-border"
                 />
               </div>
               <div className="flex flex-col justify-center">
@@ -88,9 +88,9 @@ export default function DocumentationPage() {
                   <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
                     {step.number}
                   </span>
-                  <h3 className="text-lg font-semibold text-heading">{step.title}</h3>
+                  <h3 className="text-lg font-semibold text-heading dark:text-dark-text">{step.title}</h3>
                 </div>
-                <p className="text-sm leading-relaxed text-muted">{step.description}</p>
+                <p className="text-sm leading-relaxed text-muted dark:text-dark-text-secondary">{step.description}</p>
               </div>
             </div>
           ))}
@@ -98,20 +98,20 @@ export default function DocumentationPage() {
       </section>
 
       <section className="mb-14">
-        <h2 className="mb-6 text-2xl font-bold text-heading">Supported File Formats</h2>
-        <div className="overflow-hidden rounded-lg border border-border">
+        <h2 className="mb-6 text-2xl font-bold text-heading dark:text-dark-text">Supported File Formats</h2>
+        <div className="overflow-hidden rounded-lg border border-border dark:border-dark-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-surface-alt">
+            <thead className="bg-surface-alt dark:bg-dark-surface-alt">
               <tr>
-                <th className="px-6 py-3 font-semibold text-heading">Category</th>
-                <th className="px-6 py-3 font-semibold text-heading">Formats</th>
+                <th className="px-6 py-3 font-semibold text-heading dark:text-dark-text">Category</th>
+                <th className="px-6 py-3 font-semibold text-heading dark:text-dark-text">Formats</th>
               </tr>
             </thead>
             <tbody>
               {fileFormats.map((row) => (
-                <tr key={row.category} className="border-t border-border">
-                  <td className="px-6 py-3 font-medium text-heading">{row.category}</td>
-                  <td className="px-6 py-3 text-muted">{row.formats}</td>
+                <tr key={row.category} className="border-t border-border dark:border-dark-border">
+                  <td className="px-6 py-3 font-medium text-heading dark:text-dark-text">{row.category}</td>
+                  <td className="px-6 py-3 text-muted dark:text-dark-text-secondary">{row.formats}</td>
                 </tr>
               ))}
             </tbody>
@@ -120,11 +120,11 @@ export default function DocumentationPage() {
       </section>
 
       <section className="mb-14">
-        <h2 className="mb-6 text-2xl font-bold text-heading">Capabilities</h2>
+        <h2 className="mb-6 text-2xl font-bold text-heading dark:text-dark-text">Capabilities</h2>
         <ul className="grid gap-3 sm:grid-cols-2">
           {capabilities.map((cap) => (
-            <li key={cap} className="flex items-start gap-2 text-sm text-body">
-              <span className="mt-0.5 text-accent">+</span>
+            <li key={cap} className="flex items-start gap-2 text-sm text-body dark:text-dark-text">
+              <span className="mt-0.5 text-accent dark:text-accent-light">+</span>
               {cap}
             </li>
           ))}
@@ -133,9 +133,9 @@ export default function DocumentationPage() {
 
       <div className="grid gap-8 md:grid-cols-2">
         <section>
-          <h2 className="mb-4 text-xl font-bold text-heading">System Requirements</h2>
-          <div className="rounded-lg border border-border bg-white p-5">
-            <ul className="space-y-2 text-sm text-body">
+          <h2 className="mb-4 text-xl font-bold text-heading dark:text-dark-text">System Requirements</h2>
+          <div className="rounded-lg border border-border bg-white p-5 dark:border-dark-border dark:bg-dark-surface">
+            <ul className="space-y-2 text-sm text-body dark:text-dark-text">
               <li>Windows XP, Vista, or Windows 7</li>
               <li>Microsoft .NET Framework 2.0</li>
             </ul>
@@ -143,9 +143,9 @@ export default function DocumentationPage() {
         </section>
 
         <section>
-          <h2 className="mb-4 text-xl font-bold text-heading">Technical Details</h2>
-          <div className="rounded-lg border border-border bg-white p-5">
-            <ul className="space-y-2 text-sm text-body">
+          <h2 className="mb-4 text-xl font-bold text-heading dark:text-dark-text">Technical Details</h2>
+          <div className="rounded-lg border border-border bg-white p-5 dark:border-dark-border dark:bg-dark-surface">
+            <ul className="space-y-2 text-sm text-body dark:text-dark-text">
               <li>Written in C# (object-oriented)</li>
               <li>Built on SharpDevelop application core</li>
               <li>Extensible through add-in system</li>
@@ -156,20 +156,20 @@ export default function DocumentationPage() {
       </div>
 
       <section className="mt-14">
-        <h2 className="mb-4 text-xl font-bold text-heading">Included Modules</h2>
-        <div className="overflow-hidden rounded-lg border border-border">
+        <h2 className="mb-4 text-xl font-bold text-heading dark:text-dark-text">Included Modules</h2>
+        <div className="overflow-hidden rounded-lg border border-border dark:border-dark-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-surface-alt">
+            <thead className="bg-surface-alt dark:bg-dark-surface-alt">
               <tr>
-                <th className="px-6 py-3 font-semibold text-heading">Module</th>
-                <th className="px-6 py-3 font-semibold text-heading">Purpose</th>
+                <th className="px-6 py-3 font-semibold text-heading dark:text-dark-text">Module</th>
+                <th className="px-6 py-3 font-semibold text-heading dark:text-dark-text">Purpose</th>
               </tr>
             </thead>
             <tbody>
               {modules.map((mod) => (
-                <tr key={mod.name} className="border-t border-border">
-                  <td className="px-6 py-3 font-mono text-xs text-heading">{mod.name}</td>
-                  <td className="px-6 py-3 text-muted">{mod.description}</td>
+                <tr key={mod.name} className="border-t border-border dark:border-dark-border">
+                  <td className="px-6 py-3 font-mono text-xs text-heading dark:text-dark-text">{mod.name}</td>
+                  <td className="px-6 py-3 text-muted dark:text-dark-text-secondary">{mod.description}</td>
                 </tr>
               ))}
             </tbody>

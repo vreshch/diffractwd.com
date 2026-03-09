@@ -12,12 +12,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var theme = localStorage.getItem('theme');
+                var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (theme === 'dark' || (!theme && prefersDark)) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-dark-bg">
         <Navigation />
         <main>{children}</main>
-        <footer className="border-t border-border bg-surface py-8">
-          <div className="mx-auto max-w-6xl px-6 text-center text-sm text-muted">
+        <footer className="border-t border-border bg-surface py-8 dark:border-dark-border dark:bg-dark-surface">
+          <div className="mx-auto max-w-6xl px-6 text-center text-sm text-muted dark:text-dark-text-secondary">
             &copy; {new Date().getFullYear()} Volodymyr D. Vreshch. DiffractWD is free and open
             source under the BSD License.
           </div>

@@ -53,26 +53,26 @@ const changelog = [
 export default function SupportPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="mb-2 text-3xl font-bold text-heading">Support</h1>
-      <p className="mb-10 text-muted">Get help, report issues, or review the license.</p>
+      <h1 className="mb-2 text-3xl font-bold text-heading dark:text-dark-text">Support</h1>
+      <p className="mb-10 text-muted dark:text-dark-text-secondary">Get help, report issues, or review the license.</p>
 
       <div className="mb-14 grid gap-6 md:grid-cols-2">
-        <div className="rounded-lg border border-border bg-white p-6">
-          <h2 className="mb-3 text-lg font-semibold text-heading">Author</h2>
-          <p className="text-sm text-body">
+        <div className="rounded-lg border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
+          <h2 className="mb-3 text-lg font-semibold text-heading dark:text-dark-text">Author</h2>
+          <p className="text-sm text-body dark:text-dark-text">
             <a
               href="https://vreshch.com/contacts"
               target="_blank"
-              className="font-medium text-accent hover:underline"
+              className="font-medium text-accent hover:underline dark:text-accent-light"
             >
               Volodymyr D. Vreshch
             </a>
           </p>
         </div>
-        <div className="rounded-lg border border-border bg-white p-6">
-          <h2 className="mb-3 text-lg font-semibold text-heading">Feedback</h2>
-          <p className="mb-3 text-sm text-body">We welcome your input:</p>
-          <ul className="space-y-1 text-sm text-muted">
+        <div className="rounded-lg border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
+          <h2 className="mb-3 text-lg font-semibold text-heading dark:text-dark-text">Feedback</h2>
+          <p className="mb-3 text-sm text-body dark:text-dark-text">We welcome your input:</p>
+          <ul className="space-y-1 text-sm text-muted dark:text-dark-text-secondary">
             <li>Suggestions and feature requests</li>
             <li>Bug reports</li>
             <li>Questions and help requests</li>
@@ -81,20 +81,20 @@ export default function SupportPage() {
       </div>
 
       <section className="mb-14">
-        <h2 className="mb-6 text-2xl font-bold text-heading">Changelog</h2>
+        <h2 className="mb-6 text-2xl font-bold text-heading dark:text-dark-text">Changelog</h2>
         <div className="space-y-4">
           {changelog.map((release) => (
-            <div key={release.version} className="rounded-lg border border-border bg-white p-5">
+            <div key={release.version} className="rounded-lg border border-border bg-white p-5 dark:border-dark-border dark:bg-dark-surface">
               <div className="mb-2 flex items-baseline gap-3">
-                <span className="inline-block rounded bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
+                <span className="inline-block rounded bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent dark:text-accent-light">
                   v{release.version}
                 </span>
-                <span className="text-sm text-muted">{release.date}</span>
+                <span className="text-sm text-muted dark:text-dark-text-secondary">{release.date}</span>
               </div>
-              <ul className="space-y-1 text-sm text-body">
+              <ul className="space-y-1 text-sm text-body dark:text-dark-text">
                 {release.changes.map((change, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-muted">&bull;</span>
+                    <span className="mt-0.5 text-muted dark:text-dark-text-secondary">&bull;</span>
                     {change}
                   </li>
                 ))}
@@ -105,8 +105,8 @@ export default function SupportPage() {
       </section>
 
       <section>
-        <h2 className="mb-4 text-2xl font-bold text-heading">BSD 2-Clause License</h2>
-        <div className="rounded-lg border border-border bg-surface p-6 text-sm leading-relaxed text-body">
+        <h2 className="mb-4 text-2xl font-bold text-heading dark:text-dark-text">BSD 2-Clause License</h2>
+        <div className="rounded-lg border border-border bg-surface p-6 text-sm leading-relaxed text-body dark:border-dark-border dark:bg-dark-surface dark:text-dark-text">
           <p className="mb-4">Copyright {new Date().getFullYear()} Vreshch V.D.</p>
           <p className="mb-4">
             Redistribution and use in source and binary forms, with or without modification, are

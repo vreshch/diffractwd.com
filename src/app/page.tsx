@@ -83,27 +83,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="py-16 dark:bg-dark-bg">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-10 text-center text-2xl font-bold text-heading">Features</h2>
+          <h2 className="mb-10 text-center text-2xl font-bold text-heading dark:text-dark-text">
+            Features
+          </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md"
+                className="rounded-lg border border-border bg-white p-6 transition-shadow hover:shadow-md dark:border-dark-border dark:bg-dark-surface"
               >
-                <h3 className="mb-2 text-lg font-semibold text-heading">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-muted">{feature.description}</p>
+                <h3 className="mb-2 text-lg font-semibold text-heading dark:text-dark-text">
+                  {feature.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-muted dark:text-dark-text-secondary">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface py-12">
+      <section className="border-t border-border bg-surface py-12 dark:border-dark-border dark:bg-dark-surface">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="mb-3 text-xl font-bold text-heading">Ready to get started?</h2>
-          <p className="mb-6 text-muted">
+          <h2 className="mb-3 text-xl font-bold text-heading dark:text-dark-text">
+            Ready to get started?
+          </h2>
+          <p className="mb-6 text-muted dark:text-dark-text-secondary">
             Windows XP, Vista, or Windows 7. Requires .NET Framework 2.0.
           </p>
           <a

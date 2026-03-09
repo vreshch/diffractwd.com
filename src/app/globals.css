@@ -2,6 +2,8 @@
 
 @source "../**/*.{ts,tsx}";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #1e3a5f;
   --color-primary-light: #2b6892;
@@ -14,6 +16,12 @@
   --color-body: #334155;
   --color-muted: #64748b;
   --color-border: #e2e8f0;
+  --color-dark-bg: #0f172a;
+  --color-dark-surface: #1e293b;
+  --color-dark-surface-alt: #334155;
+  --color-dark-text: #f1f5f9;
+  --color-dark-text-secondary: #94a3b8;
+  --color-dark-border: #334155;
 }
 
 * {
@@ -45,6 +53,11 @@ body {
   color: var(--color-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  color: var(--color-dark-text);
+  background-color: var(--color-dark-bg);
 }
 
 a {

@@ -31,8 +31,8 @@ const screenshots = [
 export default function ScreenshotsPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-12">
-      <h1 className="mb-2 text-3xl font-bold text-heading">Screenshots</h1>
-      <p className="mb-8 text-muted">See DiffractWD in action.</p>
+      <h1 className="mb-2 text-3xl font-bold text-heading dark:text-dark-text">Screenshots</h1>
+      <p className="mb-8 text-muted dark:text-dark-text-secondary">See DiffractWD in action.</p>
 
       <div className="grid gap-6 sm:grid-cols-2">
         {screenshots.map((shot) => (
@@ -40,7 +40,7 @@ export default function ScreenshotsPage() {
             key={shot.title}
             href={shot.full}
             target="_blank"
-            className="group overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-lg"
+            className="group overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-lg dark:border-dark-border dark:bg-dark-surface"
           >
             <div className="overflow-hidden">
               <Image
@@ -52,7 +52,7 @@ export default function ScreenshotsPage() {
               />
             </div>
             <div className="px-4 py-3">
-              <p className="text-sm font-medium text-heading">{shot.title}</p>
+              <p className="text-sm font-medium text-heading dark:text-dark-text">{shot.title}</p>
             </div>
           </a>
         ))}

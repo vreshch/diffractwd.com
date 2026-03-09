@@ -47,14 +47,21 @@ describe('Navigation', () => {
   it('renders the mobile menu toggle button', () => {
     render(<Navigation />);
 
-    const button = screen.getByRole('button');
+    const button = screen.getByLabelText('Toggle menu');
     expect(button).toBeInTheDocument();
+  });
+
+  it('renders the theme toggle button', () => {
+    render(<Navigation />);
+
+    const buttons = screen.getAllByLabelText('Toggle theme');
+    expect(buttons.length).toBeGreaterThan(0);
   });
 
   it('toggles mobile menu on button click', () => {
     render(<Navigation />);
 
-    const button = screen.getByRole('button');
+    const button = screen.getByLabelText('Toggle menu');
     fireEvent.click(button);
 
     const header = button.closest('header');
