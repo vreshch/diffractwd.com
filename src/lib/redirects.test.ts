@@ -22,7 +22,7 @@ describe('redirects', () => {
     }
   });
 
-  it('maps legacy underscore URLs to kebab-case', () => {
+  it('maps legacy underscore URLs to new paths', () => {
     const underscoreRedirects = redirects.filter((r) => r.source.includes('_'));
     expect(underscoreRedirects.length).toBeGreaterThanOrEqual(1);
 
@@ -31,13 +31,18 @@ describe('redirects', () => {
     }
   });
 
-  it('redirects quick_manual to quick-manual', () => {
-    const quickManualRedirects = redirects.filter((r) => r.destination === '/quick-manual');
-    expect(quickManualRedirects.length).toBe(2);
+  it('redirects old pages to new consolidated pages', () => {
+    const newsRedirects = redirects.filter((r) => r.source.includes('news'));
+    expect(newsRedirects.every((r) => r.destination === '/support')).toBe(true);
 
-    const sources = quickManualRedirects.map((r) => r.source);
-    expect(sources).toContain('/quick_manual');
-    expect(sources).toContain('/quick_manual.html');
+    const aboutRedirects = redirects.filter((r) => r.source.includes('about'));
+    expect(aboutRedirects.every((r) => r.destination === '/documentation')).toBe(true);
+
+    const manualRedirects = redirects.filter((r) => r.source.includes('manual'));
+    expect(manualRedirects.every((r) => r.destination === '/documentation')).toBe(true);
+
+    const licenseRedirects = redirects.filter((r) => r.source.includes('license'));
+    expect(licenseRedirects.every((r) => r.destination === '/support')).toBe(true);
   });
 
   it('has unique source paths', () => {

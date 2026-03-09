@@ -295,7 +295,7 @@ jobs:
             }
 
             // Page status table
-            const pages = ['home', 'news', 'about', 'screenshots', 'downloads', 'quick-manual', 'support', 'license'];
+            const pages = ['home', 'screenshots', 'documentation', 'downloads', 'support'];
             const pageRows = pages.map(p => {
               const desktopImg = report.images.find(i => i.name === `${p}-desktop.png`);
               const mobileImg = report.images.find(i => i.name === `${p}-mobile.png`);

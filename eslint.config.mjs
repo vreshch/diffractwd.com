@@ -13,7 +13,6 @@ const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
   {
     rules: {
-      'react/jsx-no-target-blank': 'off',
       'prefer-const': 'error',
     },
   },
