@@ -13,11 +13,9 @@ describe('navItems', () => {
   it('includes all main pages', () => {
     const labels = navItems.map((item) => item.label);
     expect(labels).toContain('Home');
-    expect(labels).toContain('News');
-    expect(labels).toContain('About');
     expect(labels).toContain('Screenshots');
+    expect(labels).toContain('Documentation');
     expect(labels).toContain('Downloads');
-    expect(labels).toContain('Quick Manual');
     expect(labels).toContain('Support');
   });
 

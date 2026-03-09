@@ -1,82 +1,73 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'DiffractWD - Downloads',
 };
 
+const downloads = [
+  {
+    title: 'Installation Program',
+    description: 'Recommended. Includes installer with all dependencies.',
+    href: '/downloads/diffractwd.exe',
+    type: 'EXE',
+  },
+  {
+    title: 'Compressed Binaries',
+    description: 'Portable version. Extract and run without installation.',
+    href: '/downloads/diffractwd_bin.zip',
+    type: 'ZIP',
+  },
+  {
+    title: 'Source Code',
+    description: 'Full C# source code. Build with Visual Studio or SharpDevelop.',
+    href: '/downloads/diffractwd_src.zip',
+    type: 'ZIP',
+  },
+];
+
 export default function DownloadsPage() {
   return (
-    <div>
-      <h1 className="text-3xl">Downloads</h1>
-      <hr className="my-4 border-t border-black/10" />
-      <div className="text-justify">
-        <dl className="mb-4">
-          <dt className="mb-4 text-xl font-bold text-heading">DiffractWD 1.30</dt>
-          <dd className="ml-4">
-            <div className="mt-4 block">
-              <a
-                href="/downloads/diffractwd.exe"
-                className="inline-flex items-center leading-[48px]"
-              >
-                <Image
-                  src="/setup.png"
-                  className="relative ml-4 mr-5 align-middle"
-                  width={48}
-                  height={48}
-                  alt="Download Program"
-                />
-                <span className="inline-block underline">Installation program</span>
-              </a>
+    <div className="mx-auto max-w-6xl px-6 py-12">
+      <h1 className="mb-2 text-3xl font-bold text-heading">Downloads</h1>
+      <p className="mb-8 text-muted">DiffractWD v1.30 &mdash; latest stable release.</p>
+
+      <div className="mb-10 grid gap-4 sm:grid-cols-3">
+        {downloads.map((dl) => (
+          <a
+            key={dl.title}
+            href={dl.href}
+            className="group rounded-lg border border-border bg-white p-6 transition-all hover:border-accent/30 hover:shadow-md"
+          >
+            <div className="mb-3 inline-block rounded bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
+              {dl.type}
             </div>
-            <div className="mt-4 block">
-              <a
-                href="/downloads/diffractwd_bin.zip"
-                className="inline-flex items-center leading-[48px]"
-              >
-                <Image
-                  src="/package.png"
-                  className="relative ml-4 mr-5 align-middle"
-                  width={48}
-                  height={48}
-                  alt="Download Compressed Binaries"
-                />
-                <span className="inline-block underline">Compressed binaries</span>
-              </a>
-            </div>
-            <div className="mt-4 block">
-              <a
-                href="/downloads/diffractwd_src.zip"
-                className="inline-flex items-center leading-[48px]"
-              >
-                <Image
-                  src="/source.png"
-                  className="relative ml-4 mr-5 align-middle"
-                  width={48}
-                  height={48}
-                  alt="Download Source Files"
-                />
-                <span className="inline-block underline">Source files</span>
-              </a>
-            </div>
-          </dd>
-        </dl>
-        <dl className="mb-4">
-          <dt className="mb-4 text-xl font-bold text-heading">Requirements</dt>
-          <dd className="ml-4">Windows XP, Vista or Windows 7</dd>
-          <dd className="ml-4">Microsoft .NET Framework 2.0</dd>
-        </dl>
-        <dl className="mb-4">
-          <dt className="mb-4 text-xl font-bold text-heading">License</dt>
-          <dd className="ml-4">
-            DiffractWD is totally free and licensed under the{' '}
-            <Link href="/license" className="text-primary hover:underline">
-              BSD License
-            </Link>
-            .
-          </dd>
-        </dl>
+            <h3 className="mb-1 text-base font-semibold text-heading group-hover:text-accent">
+              {dl.title}
+            </h3>
+            <p className="text-sm text-muted">{dl.description}</p>
+          </a>
+        ))}
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="rounded-lg border border-border bg-surface p-6">
+          <h2 className="mb-3 text-lg font-semibold text-heading">System Requirements</h2>
+          <ul className="space-y-2 text-sm text-body">
+            <li>Windows XP, Vista, or Windows 7</li>
+            <li>Microsoft .NET Framework 2.0</li>
+          </ul>
+        </div>
+        <div className="rounded-lg border border-border bg-surface p-6">
+          <h2 className="mb-3 text-lg font-semibold text-heading">License</h2>
+          <p className="text-sm text-body">
+            DiffractWD is free and open source, licensed under the BSD 2-Clause License. See the
+            full license text on the{' '}
+            <a href="/support" className="text-accent hover:underline">
+              Support
+            </a>{' '}
+            page.
+          </p>
+        </div>
       </div>
     </div>
   );

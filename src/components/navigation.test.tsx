@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Sidebar } from './sidebar';
+import { Navigation } from './navigation';
 import { navItems } from '@/lib/constants';
 
 vi.mock('next/link', () => ({
@@ -8,12 +8,14 @@ vi.mock('next/link', () => ({
     children,
     href,
     className,
+    onClick,
   }: {
     children: React.ReactNode;
     href: string;
     className?: string;
+    onClick?: () => void;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} className={className} onClick={onClick}>
       {children}
     </a>
   ),
@@ -23,53 +25,46 @@ vi.mock('next/navigation', () => ({
   usePathname: () => '/',
 }));
 
-describe('Sidebar', () => {
+describe('Navigation', () => {
   it('renders all navigation items', () => {
-    render(<Sidebar />);
+    render(<Navigation />);
 
     for (const item of navItems) {
-      expect(screen.getByText(item.label)).toBeInTheDocument();
+      const links = screen.getAllByText(item.label);
+      expect(links.length).toBeGreaterThan(0);
     }
   });
 
   it('renders navigation links with correct hrefs', () => {
-    render(<Sidebar />);
+    render(<Navigation />);
 
     for (const item of navItems) {
-      const link = screen.getByText(item.label);
-      expect(link.closest('a')).toHaveAttribute('href', item.href);
+      const links = screen.getAllByText(item.label);
+      expect(links[0].closest('a')).toHaveAttribute('href', item.href);
     }
   });
 
   it('renders the mobile menu toggle button', () => {
-    render(<Sidebar />);
+    render(<Navigation />);
 
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
   });
 
   it('toggles mobile menu on button click', () => {
-    render(<Sidebar />);
+    render(<Navigation />);
 
     const button = screen.getByRole('button');
-
     fireEvent.click(button);
 
     const nav = button.closest('nav');
     expect(nav).toBeInTheDocument();
   });
 
-  it('highlights the active route', () => {
-    render(<Sidebar />);
+  it('renders the site title link', () => {
+    render(<Navigation />);
 
-    const homeLink = screen.getByText('Home').closest('a');
-    expect(homeLink?.className).toContain('font-semibold');
-  });
-
-  it('does not highlight non-active routes', () => {
-    render(<Sidebar />);
-
-    const newsLink = screen.getByText('News').closest('a');
-    expect(newsLink?.className).not.toContain('font-semibold');
+    const titleLink = screen.getByText('DiffractWD');
+    expect(titleLink.closest('a')).toHaveAttribute('href', '/');
   });
 });

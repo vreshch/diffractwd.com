@@ -3,13 +3,10 @@ import { expectScreenshot, printWarningSummary } from './visual';
 
 const pages = [
   { path: '/', name: 'home' },
-  { path: '/news', name: 'news' },
-  { path: '/about', name: 'about' },
   { path: '/screenshots', name: 'screenshots' },
+  { path: '/documentation', name: 'documentation' },
   { path: '/downloads', name: 'downloads' },
-  { path: '/quick-manual', name: 'quick-manual' },
   { path: '/support', name: 'support' },
-  { path: '/license', name: 'license' },
 ];
 
 const MOBILE_VIEWPORT = { width: 375, height: 812 };
@@ -38,14 +35,19 @@ test.describe('mobile screenshots', () => {
 
 test.describe('redirects', () => {
   const redirects = [
-    { from: '/news.html', to: '/news' },
-    { from: '/about.html', to: '/about' },
+    { from: '/news', to: '/support' },
+    { from: '/news.html', to: '/support' },
+    { from: '/about', to: '/documentation' },
+    { from: '/about.html', to: '/documentation' },
     { from: '/screenshots.html', to: '/screenshots' },
     { from: '/downloads.html', to: '/downloads' },
-    { from: '/quick_manual', to: '/quick-manual' },
-    { from: '/quick_manual.html', to: '/quick-manual' },
+    { from: '/quick_manual', to: '/documentation' },
+    { from: '/quick_manual.html', to: '/documentation' },
+    { from: '/quick-manual', to: '/documentation' },
+    { from: '/quick-manual.html', to: '/documentation' },
     { from: '/support.html', to: '/support' },
-    { from: '/license.html', to: '/license' },
+    { from: '/license', to: '/support' },
+    { from: '/license.html', to: '/support' },
   ];
 
   for (const { from, to } of redirects) {

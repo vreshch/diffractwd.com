@@ -5,69 +5,57 @@ export const metadata: Metadata = {
   title: 'DiffractWD - Screenshots',
 };
 
+const screenshots = [
+  {
+    src: '/screenshots/screenshot1_mini.jpg',
+    full: '/screenshots/screenshot1.jpg',
+    title: 'Default Open Window',
+  },
+  {
+    src: '/screenshots/screenshot2_mini.jpg',
+    full: '/screenshots/screenshot2.jpg',
+    title: 'Powder Pattern Import',
+  },
+  {
+    src: '/screenshots/screenshot3_mini.jpg',
+    full: '/screenshots/screenshot3.jpg',
+    title: 'Powder Pattern Simulation',
+  },
+  {
+    src: '/screenshots/screenshot4_mini.jpg',
+    full: '/screenshots/screenshot4.jpg',
+    title: 'Advanced Windows Docking',
+  },
+];
+
 export default function ScreenshotsPage() {
   return (
-    <div>
-      <h1 className="text-3xl">Screenshots</h1>
-      <hr className="my-4 border-t border-black/10" />
-      <div className="text-justify">
-        <div className="flex flex-col gap-4 md:flex-row">
-          <div className="w-full text-center md:w-1/2">
-            <a href="/screenshots/screenshot1.jpg" title="Default Open Window" target="_blank">
+    <div className="mx-auto max-w-6xl px-6 py-12">
+      <h1 className="mb-2 text-3xl font-bold text-heading">Screenshots</h1>
+      <p className="mb-8 text-muted">See DiffractWD in action.</p>
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        {screenshots.map((shot) => (
+          <a
+            key={shot.title}
+            href={shot.full}
+            target="_blank"
+            className="group overflow-hidden rounded-lg border border-border bg-white transition-shadow hover:shadow-lg"
+          >
+            <div className="overflow-hidden">
               <Image
-                src="/screenshots/screenshot1_mini.jpg"
-                className="border border-gray-300 rounded"
-                width={286}
-                height={204}
-                alt="Diffract WD Screenshot #1"
+                src={shot.src}
+                alt={shot.title}
+                width={572}
+                height={408}
+                className="w-full transition-transform duration-300 group-hover:scale-[1.02]"
               />
-            </a>
-            <p>Default Open Window</p>
-          </div>
-          <div className="w-full text-center md:w-1/2">
-            <a href="/screenshots/screenshot2.jpg" title="Powder Pattern Import" target="_blank">
-              <Image
-                src="/screenshots/screenshot2_mini.jpg"
-                className="border border-gray-300 rounded"
-                width={286}
-                height={204}
-                alt="Diffract WD Screenshot #2"
-              />
-            </a>
-            <p>Powder Pattern Import</p>
-          </div>
-        </div>
-        <br />
-        <div className="flex flex-col gap-4 md:flex-row">
-          <div className="w-full text-center md:w-1/2">
-            <a
-              href="/screenshots/screenshot3.jpg"
-              title="Powder Pattern Simulation"
-              target="_blank"
-            >
-              <Image
-                src="/screenshots/screenshot3_mini.jpg"
-                className="border border-gray-300 rounded"
-                width={286}
-                height={204}
-                alt="Diffract WD Screenshot #3"
-              />
-            </a>
-            <p>Powder Pattern Simulation</p>
-          </div>
-          <div className="w-full text-center md:w-1/2">
-            <a href="/screenshots/screenshot4.jpg" title="Advanced Windows Docking" target="_blank">
-              <Image
-                src="/screenshots/screenshot4_mini.jpg"
-                className="border border-gray-300 rounded"
-                width={286}
-                height={204}
-                alt="Diffract WD Screenshot #4"
-              />
-            </a>
-            <p>Advanced Windows Docking</p>
-          </div>
-        </div>
+            </div>
+            <div className="px-4 py-3">
+              <p className="text-sm font-medium text-heading">{shot.title}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );

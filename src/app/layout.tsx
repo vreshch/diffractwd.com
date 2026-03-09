@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Sidebar } from '@/components/sidebar';
+import { Navigation } from '@/components/navigation';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -13,28 +13,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <div className="app">
-          <div className="mx-auto max-w-7xl px-4">
-            <div className="relative mt-5 min-h-[120px] bg-gradient-to-b from-primary to-primary-light">
-              <div className="h-[120px] w-full bg-[url('/logo.png')] bg-right bg-no-repeat" />
-              <h2 className="absolute left-8 top-8 text-xl text-white">Diffract WD</h2>
-              <h3 className="absolute left-8 top-[70px] text-base font-bold text-subtitle">
-                :: by Vreshch ::
-              </h3>
-            </div>
-            <div className="mt-5 flex flex-col md:flex-row md:gap-6">
-              <div className="w-full md:w-1/4">
-                <Sidebar />
-              </div>
-              <div className="relative min-h-[400px] w-full md:w-3/4">{children}</div>
-            </div>
-            <footer className="mb-6">
-              <hr className="my-4 border-t border-black/10" />
-              &copy; Vreshch V.D. {new Date().getFullYear()}
-            </footer>
+      <body className="min-h-screen bg-white">
+        <Navigation />
+        <main>{children}</main>
+        <footer className="border-t border-border bg-surface py-8">
+          <div className="mx-auto max-w-6xl px-6 text-center text-sm text-muted">
+            &copy; {new Date().getFullYear()} Volodymyr D. Vreshch. DiffractWD is free and open
+            source under the BSD License.
           </div>
-        </div>
+        </footer>
       </body>
     </html>
   );
