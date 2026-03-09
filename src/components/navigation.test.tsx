@@ -57,14 +57,14 @@ describe('Navigation', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
 
-    const nav = button.closest('nav');
-    expect(nav).toBeInTheDocument();
+    const header = button.closest('header');
+    expect(header).toBeInTheDocument();
   });
 
   it('renders the site title link', () => {
     render(<Navigation />);
 
-    const titleLink = screen.getByText('DiffractWD');
-    expect(titleLink.closest('a')).toHaveAttribute('href', '/');
+    const titlePart = screen.getByText('WD');
+    expect(titlePart.closest('a')).toHaveAttribute('href', '/');
   });
 });

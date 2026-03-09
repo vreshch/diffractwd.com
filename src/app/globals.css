@@ -9,15 +9,19 @@
   --color-accent-light: #60a5fa;
   --color-surface: #f8fafc;
   --color-surface-alt: #f1f5f9;
+  --color-surface-hover: #f1f5f9;
   --color-heading: #0f172a;
   --color-body: #334155;
   --color-muted: #64748b;
   --color-border: #e2e8f0;
-  --color-nav-active: #1d4ed8;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -39,6 +43,8 @@ body {
     Helvetica Neue,
     sans-serif;
   color: var(--color-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
