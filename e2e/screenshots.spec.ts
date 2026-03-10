@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { expectScreenshot, printWarningSummary } from './visual';
+import { expectScreenshot, setTheme, printWarningSummary } from './visual';
 
 const pages = [
   { path: '/', name: 'home' },
@@ -10,26 +10,33 @@ const pages = [
 ];
 
 const MOBILE_VIEWPORT = { width: 375, height: 812 };
+const themes = ['dark', 'light'] as const;
 
 test.describe('desktop screenshots', () => {
-  for (const { path, name } of pages) {
-    test(`${name} page renders correctly`, async ({ page }) => {
-      await page.goto(path, { waitUntil: 'networkidle' });
-      await expect(page).toHaveTitle(/DiffractWD/);
-      await expectScreenshot(page, `${name}-desktop.png`);
-    });
+  for (const theme of themes) {
+    for (const { path, name } of pages) {
+      test(`${name} page renders correctly (${theme}, desktop)`, async ({ page }) => {
+        await page.goto(path, { waitUntil: 'networkidle' });
+        await setTheme(page, theme);
+        await expect(page).toHaveTitle(/DiffractWD/);
+        await expectScreenshot(page, `${name}-${theme}-desktop.png`);
+      });
+    }
   }
 });
 
 test.describe('mobile screenshots', () => {
   test.use({ viewport: MOBILE_VIEWPORT });
 
-  for (const { path, name } of pages) {
-    test(`${name} page renders correctly on mobile`, async ({ page }) => {
-      await page.goto(path, { waitUntil: 'networkidle' });
-      await expect(page).toHaveTitle(/DiffractWD/);
-      await expectScreenshot(page, `${name}-mobile.png`);
-    });
+  for (const theme of themes) {
+    for (const { path, name } of pages) {
+      test(`${name} page renders correctly (${theme}, mobile)`, async ({ page }) => {
+        await page.goto(path, { waitUntil: 'networkidle' });
+        await setTheme(page, theme);
+        await expect(page).toHaveTitle(/DiffractWD/);
+        await expectScreenshot(page, `${name}-${theme}-mobile.png`);
+      });
+    }
   }
 });
 

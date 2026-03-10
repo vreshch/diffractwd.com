@@ -296,12 +296,12 @@ jobs:
 
             // Page status table
             const pages = ['home', 'screenshots', 'documentation', 'downloads', 'support'];
+            const getIcon = (name) => {
+              const img = report.images.find(i => i.name === name);
+              return !img ? '➖' : img.status === 'changed' ? '🔄' : '✅';
+            };
             const pageRows = pages.map(p => {
-              const desktopImg = report.images.find(i => i.name === `${p}-desktop.png`);
-              const mobileImg = report.images.find(i => i.name === `${p}-mobile.png`);
-              const desktopIcon = !desktopImg ? '➖' : desktopImg.status === 'changed' ? '🔄' : '✅';
-              const mobileIcon = !mobileImg ? '➖' : mobileImg.status === 'changed' ? '🔄' : '✅';
-              return `| ${p} | ${desktopIcon} | ${mobileIcon} |`;
+              return `| ${p} | ${getIcon(`${p}-dark-desktop.png`)} | ${getIcon(`${p}-dark-mobile.png`)} | ${getIcon(`${p}-light-desktop.png`)} | ${getIcon(`${p}-light-mobile.png`)} |`;
             }).join('\n');
 
             const mergeStatus = jobStatus === 'success' && e2eStatus === 'success'
@@ -318,8 +318,8 @@ jobs:
               ``,
               visualSection,
               `### 📸 Page Status`,
-              `| Page | 🖥️ Desktop | 📱 Mobile |`,
-              `|------|-----------|----------|`,
+              `| Page | 🌙 Dark Desktop | 🌙 Dark Mobile | ☀️ Light Desktop | ☀️ Light Mobile |`,
+              `|------|----------------|----------------|-----------------|-----------------|`,
               pageRows,
               ``,
               mergeStatus,

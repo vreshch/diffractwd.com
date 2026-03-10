@@ -26,6 +26,19 @@ export function getVisualMode(): VisualMode {
   return 'warning';
 }
 
+export async function setTheme(page: Page, theme: 'dark' | 'light'): Promise<void> {
+  await page.evaluate((t) => {
+    localStorage.setItem('theme', t);
+    if (t === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, theme);
+  // Allow styles to settle after theme change
+  await page.waitForTimeout(300);
+}
+
 export async function waitForVisualStability(page: Page, timeout = 500): Promise<void> {
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => document.fonts.ready);
