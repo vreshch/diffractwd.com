@@ -110,7 +110,7 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/downloads/diffractwd.exe"
-                  className="inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-lg transition-all hover:bg-white/90 hover:shadow-xl"
+                  className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-md transition-all hover:bg-white/90 hover:shadow-lg"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -121,7 +121,7 @@ export default function HomePage() {
                 </a>
                 <Link
                   href="/screenshots"
-                  className="inline-block rounded-lg border-2 border-white px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-primary"
+                  className="inline-block rounded-lg border-2 border-white px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-primary"
                 >
                   View Screenshots
                 </Link>
