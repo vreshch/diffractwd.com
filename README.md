@@ -1,126 +1,56 @@
-# Website for diffractwd product [diffractwd.com](http://diffractwd.com)
+# Website for DiffractWD [diffractwd.com](https://diffractwd.com)
 
-[![GitHub Build Status](https://github.com/vreshch/diffractwd.com/workflows/CI/badge.svg)](https://github.com/vreshch/diffractwd.com/actions?query=workflow%3ACI)
-[![License: MIT](https://img.shields.io/badge/License-MIT-gren.svg)](https://opensource.org/licenses/MIT)
+[![Deploy to Production](https://github.com/vreshch/diffractwd.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/vreshch/diffractwd.com/actions/workflows/deploy.yml)
+[![PR Validation](https://github.com/vreshch/diffractwd.com/actions/workflows/pr-validation.yml/badge.svg)](https://github.com/vreshch/diffractwd.com/actions/workflows/pr-validation.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Website Diffractwd - support of corresponding project
+Website for the DiffractWD application — a free and open-source tool for powder diffraction analysis and visualization.
 
-## Technologies Used
+## Technologies
 
-* Rect & Typescript
-* Next JS as Framework
-* Shipped with Docker
-* Terraform for Infrastructure
+* React 19 & TypeScript
+* Next.js 15 (App Router)
+* Tailwind CSS 4
+* Vitest & Playwright for testing
+* Docker with Traefik reverse proxy
+* GitHub Actions CI/CD
 
 ## Quick Start
 
-* Start local development
+Requires Node.js 22+.
 
 ```bash
+npm install
 npm run dev
 ```
 
-* Build project
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local development server |
+| `npm run build` | Build for production |
+| `npm start` | Start production server (port 3001) |
+| `npm run lint` | Run ESLint |
+| `npm run format` | Format code with Prettier |
+| `npm test` | Run unit tests (Vitest) |
+| `npm run test:watch` | Run unit tests in watch mode |
+| `npm run test:e2e` | Run E2E tests (Playwright) |
+| `npm run test:e2e:ui` | Run E2E tests with UI |
+| `npm run verify` | Full verification (type check, lint, build, test) |
+
+## Docker
+
+Build and run locally:
 
 ```bash
-npm run build
+docker build -t diffractwd-com:latest .
+docker run -p 3001:3001 diffractwd-com:latest
 ```
 
-* Start project
-
-```bash
-npm start
-```
-
-* Run linter
-
-```bash
-npm run lint
-```
-
-## E2E tests
-
-* Install playwright
-
-```bash
-    npm install playwright@latest
-```
-
-* Run test with command line
-
-```bash
-    npm test
-```
-
-* Run test locally with UI
-
-```bash
-    npm test:ui
-```
-
-## Docker commands
-
-* Build Docker file locally
-
-```bash
-docker build -t europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest .
-```
-
-* Start Docker file
-
-```bash
-docker run --network=host europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest
-```
-
-* Push docker to registry
-
-```bash
-docker login & docker push europe-west3-docker.pkg.dev/diffractwd-com-418922/diffractwd/diffractwd-com:latest
-
-
-## Creating infrastructure
-
-* Install gcloud according to [instructions](https://cloud.google.com/sdk/docs/install)
-* Auth with gcloud sdk
-
-```bash
-gcloud auth application-default login
-```
-
-* Create Google Cloud project (use your own PROJECT_ID & PROJECT_NAME)
-
-```bash
-gcloud projects create "PROJECT_ID" --name="PROJECT_NAME"
-```
-
-* Modify environment variables
-
-```bash
-code terraform.tfvars
-```
-
-* Verify your domain
-https://developers.google.com/search
-
-* Initialize terraform
-
-```bash
-terraform init
-```
-
-* Plan Terraform changes
-
-```bash
-terraform plan
-```
-
-* Deploy Terraform changes
-
-```bash
-terraform apply
-```
+Production deployment uses Docker Swarm with Traefik for automatic HTTPS.
 
 ## Contacts
 
-* Website: [vreshch.com](http://vreshch.com)
+* Website: [vreshch.com](https://vreshch.com)
 * Email: vreshch@gmail.com
