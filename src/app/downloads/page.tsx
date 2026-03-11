@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Downloads',
+  title: 'Downloads',
 };
 
 const downloads = [

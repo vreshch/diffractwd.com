@@ -11,6 +11,8 @@ export const navItems: NavItem[] = [
   { href: '/support', label: 'Support' },
 ];
 
+export const SITE_URL = 'https://diffractwd.com';
+
 export const siteMetadata = {
   title: 'DiffractWD',
   description: 'DiffractWD - Free Open Source Software for Powder Diffraction Manipulation',

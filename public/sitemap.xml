@@ -1,23 +1,18 @@
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <sitemap>
-        <loc>http://diffractwd.com/</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/news</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/about</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/screenshots</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/downloads</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/quick_manual</loc>
-    </sitemap>
-    <sitemap>
-        <loc>http://diffractwd.com/support</loc>
-    </sitemap>
-</sitemapindex>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://diffractwd.com/</loc>
+  </url>
+  <url>
+    <loc>https://diffractwd.com/screenshots</loc>
+  </url>
+  <url>
+    <loc>https://diffractwd.com/documentation</loc>
+  </url>
+  <url>
+    <loc>https://diffractwd.com/downloads</loc>
+  </url>
+  <url>
+    <loc>https://diffractwd.com/support</loc>
+  </url>
+</urlset>

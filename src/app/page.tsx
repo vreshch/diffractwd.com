@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Free Powder Diffraction Software',
+  title: 'Free Powder Diffraction Software',
 };
 
 const features = [

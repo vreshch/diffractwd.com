@@ -1,13 +1,38 @@
 import type { Metadata } from 'next';
 import { Navigation } from '@/components/navigation';
+import { SITE_URL } from '@/lib/constants';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD',
-  description: 'DiffractWD - Free Open Source Software for Powder Diffraction Manipulation',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'DiffractWD - Free Powder Diffraction Software',
+    template: '%s | DiffractWD',
+  },
+  description:
+    'Free open-source software for powder diffraction pattern analysis, simulation from crystal data, and publication-ready visualization.',
   keywords:
-    'DiffractWD, Powder Diffraction Software, Powder Pattern Simulation, Powder Data Visualization, Free Software Download',
+    'DiffractWD, powder diffraction, XRD software, powder pattern simulation, crystallography, CIF viewer, free science software',
   authors: [{ name: 'Volodymyr D. Vreshch' }],
+  openGraph: {
+    type: 'website',
+    siteName: 'DiffractWD',
+    title: 'DiffractWD - Free Powder Diffraction Software',
+    description:
+      'Free open-source software for powder diffraction pattern analysis, simulation from crystal data, and publication-ready visualization.',
+    url: SITE_URL,
+    images: [{ url: '/logo.png', alt: 'DiffractWD' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'DiffractWD - Free Powder Diffraction Software',
+    description:
+      'Free open-source software for powder diffraction pattern analysis, simulation, and visualization.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
