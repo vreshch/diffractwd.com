@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Support',
+  title: 'Support',
+  description:
+    'Changelog, license information, and contact details for DiffractWD powder diffraction software.',
+  alternates: { canonical: '/support' },
 };
 
 const changelog = [
