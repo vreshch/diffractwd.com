@@ -15,6 +15,14 @@ export const metadata: Metadata = {
   keywords:
     'DiffractWD, powder diffraction software, powder pattern simulation, X-ray diffraction, crystallography, powder data visualization, free science software',
   authors: [{ name: 'Volodymyr D. Vreshch' }],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
+    ],
+  },
   openGraph: {
     type: 'website',
     siteName: 'DiffractWD',
