@@ -77,7 +77,7 @@ export default function SupportPage() {
       <div className="mb-20 grid gap-6 md:grid-cols-2">
         <div className="rounded-xl border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
@@ -104,7 +104,7 @@ export default function SupportPage() {
         </div>
         <div className="rounded-xl border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
@@ -114,15 +114,15 @@ export default function SupportPage() {
           <p className="mb-3 text-sm text-body dark:text-dark-text">We welcome your input:</p>
           <ul className="space-y-2 text-sm text-muted dark:text-dark-text-secondary">
             <li className="flex items-center gap-2">
-              <span className="text-accent-light dark:text-accent-light">&#8226;</span>
+              <span className="text-primary dark:text-accent-light">&#8226;</span>
               Suggestions and feature requests
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-accent-light dark:text-accent-light">&#8226;</span>
+              <span className="text-primary dark:text-accent-light">&#8226;</span>
               Bug reports
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-accent-light dark:text-accent-light">&#8226;</span>
+              <span className="text-primary dark:text-accent-light">&#8226;</span>
               Questions and help requests
             </li>
           </ul>
@@ -132,7 +132,7 @@ export default function SupportPage() {
       {/* Changelog */}
       <section className="mb-20">
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
             </svg>
@@ -152,7 +152,7 @@ export default function SupportPage() {
               </div>
               <div className="flex-1 rounded-xl border border-border bg-white p-5 dark:border-dark-border dark:bg-dark-surface">
                 <div className="mb-3 flex flex-wrap items-baseline gap-3">
-                  <span className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-semibold ${idx === 0 ? 'bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light' : 'bg-surface-alt text-muted dark:bg-dark-surface-alt dark:text-dark-text-secondary'}`}>
+                  <span className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-semibold ${idx === 0 ? 'bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light' : 'bg-primary/5 text-primary/60 dark:bg-dark-surface-alt dark:text-dark-text-secondary'}`}>
                     v{release.version}
                   </span>
                   <span className="text-sm text-muted dark:text-dark-text-secondary">
@@ -176,7 +176,7 @@ export default function SupportPage() {
       {/* License */}
       <section>
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>

@@ -52,12 +52,8 @@ const downloads = [
 export default function DownloadsPage() {
   return (
     <div>
-      <section className="bg-gradient-to-br from-primary to-primary-light py-16 md:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary-light py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/90">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Latest stable release
-          </div>
           <h1 className="mb-2 text-3xl font-bold tracking-tight text-white">Downloads</h1>
           <p className="text-base text-white/70">
             DiffractWD v1.30 — choose the package that works best for you.
@@ -72,17 +68,17 @@ export default function DownloadsPage() {
           <a
             key={dl.title}
             href={dl.href}
-            className="group relative rounded-xl border border-border bg-white p-6 transition-all hover:border-primary/30 hover:shadow-lg dark:border-dark-border dark:bg-dark-surface dark:hover:border-accent-light/30"
+            className="group relative rounded-xl border border-border bg-white p-6 transition-all hover:border-primary/40 hover:shadow-lg dark:border-dark-border dark:bg-dark-surface dark:hover:border-accent-light/30"
           >
             {dl.recommended && (
               <span className="absolute -top-2.5 right-4 rounded-full bg-primary px-3 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white dark:bg-accent">
                 Recommended
               </span>
             )}
-            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               {dl.icon}
             </div>
-            <div className="mb-3 inline-block rounded-md bg-surface-alt px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-muted dark:bg-dark-surface-alt dark:text-dark-text-secondary">
+            <div className="mb-3 inline-block rounded-md bg-primary/6 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary/60 dark:bg-dark-surface-alt dark:text-dark-text-secondary">
               {dl.type}
             </div>
             <h3 className="mb-1.5 text-base font-semibold text-heading transition-colors group-hover:text-primary dark:text-dark-text dark:group-hover:text-accent-light">
@@ -98,7 +94,7 @@ export default function DownloadsPage() {
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-xl border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                 <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
@@ -110,18 +106,18 @@ export default function DownloadsPage() {
           </div>
           <ul className="space-y-2.5 text-sm text-body dark:text-dark-text">
             <li className="flex items-center gap-2">
-              <span className="text-accent-light dark:text-accent-light">&#8226;</span>
+              <span className="text-primary dark:text-accent-light">&#8226;</span>
               Windows XP, Vista, or Windows 7
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-accent-light dark:text-accent-light">&#8226;</span>
+              <span className="text-primary dark:text-accent-light">&#8226;</span>
               Microsoft .NET Framework 2.0
             </li>
           </ul>
         </div>
         <div className="rounded-xl border border-border bg-white p-6 dark:border-dark-border dark:bg-dark-surface">
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
