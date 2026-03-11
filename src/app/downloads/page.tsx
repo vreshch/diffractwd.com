@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Downloads',
+  title: 'Downloads',
+  description:
+    'Download DiffractWD installer, portable ZIP, or source code. Free powder diffraction software for Windows.',
+  alternates: { canonical: '/downloads' },
 };
 
 const downloads = [

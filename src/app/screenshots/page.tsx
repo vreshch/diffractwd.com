@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { ScreenshotGallery } from '@/components/lightbox';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Screenshots',
+  title: 'Screenshots',
+  description: 'Screenshot gallery of DiffractWD powder diffraction software in action.',
+  alternates: { canonical: '/screenshots' },
 };
 
 const screenshots = [

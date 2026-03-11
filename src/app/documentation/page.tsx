@@ -2,7 +2,10 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'DiffractWD - Documentation',
+  title: 'Documentation',
+  description:
+    'Quick-start guide, supported file formats, and capabilities reference for DiffractWD powder diffraction software.',
+  alternates: { canonical: '/documentation' },
 };
 
 const steps = [

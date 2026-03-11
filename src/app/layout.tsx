@@ -2,12 +2,35 @@ import type { Metadata } from 'next';
 import { Navigation } from '@/components/navigation';
 import './globals.css';
 
+const siteUrl = 'https://diffractwd.com';
+
 export const metadata: Metadata = {
-  title: 'DiffractWD',
-  description: 'DiffractWD - Free Open Source Software for Powder Diffraction Manipulation',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'DiffractWD - Free Powder Diffraction Software',
+    template: '%s | DiffractWD',
+  },
+  description:
+    'Free open-source software for powder diffraction pattern manipulation, simulation, and visualization. Supports 14+ file formats including RAW, CIF, and XY.',
   keywords:
-    'DiffractWD, Powder Diffraction Software, Powder Pattern Simulation, Powder Data Visualization, Free Software Download',
+    'DiffractWD, powder diffraction software, powder pattern simulation, X-ray diffraction, crystallography, powder data visualization, free science software',
   authors: [{ name: 'Volodymyr D. Vreshch' }],
+  openGraph: {
+    type: 'website',
+    siteName: 'DiffractWD',
+    title: 'DiffractWD - Free Powder Diffraction Software',
+    description:
+      'Free open-source software for powder diffraction pattern manipulation, simulation, and visualization.',
+    url: siteUrl,
+    images: [{ url: '/hero.jpg', width: 1200, height: 630, alt: 'DiffractWD application screenshot' }],
+  },
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -4,6 +4,22 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'DiffractWD - Free Powder Diffraction Software',
+  alternates: { canonical: '/' },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'DiffractWD',
+  applicationCategory: 'ScienceApplication',
+  operatingSystem: 'Windows',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    'Free open-source software for powder diffraction pattern manipulation, simulation, and visualization.',
+  softwareVersion: '1.30',
+  license: 'https://opensource.org/licenses/MIT',
+  author: { '@type': 'Person', name: 'Volodymyr D. Vreshch' },
+  url: 'https://diffractwd.com',
 };
 
 const DownloadIcon = () => (
@@ -141,6 +157,10 @@ const stats = [
 export default function HomePage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary to-primary-light py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-6">
