@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { cn } from '@/lib/cn';
 
 export function ThemeToggle() {
   const [dark, setDark] = useState(false);
@@ -9,11 +8,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true);
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isDark = stored === 'dark' || (!stored && prefersDark);
-    setDark(isDark);
-    document.documentElement.classList.toggle('dark', isDark);
+    setDark(document.documentElement.classList.contains('dark'));
   }, []);
 
   const toggle = () => {
@@ -31,12 +26,11 @@ export function ThemeToggle() {
     >
       <div className="relative h-5 w-5 overflow-hidden">
         <svg
-          className={cn(
-            'absolute inset-0 h-5 w-5 transition-all duration-300',
+          className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${
             mounted && dark
               ? 'translate-y-0 rotate-0 opacity-100'
-              : '-translate-y-full rotate-90 opacity-0',
-          )}
+              : '-translate-y-full rotate-90 opacity-0'
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -49,12 +43,11 @@ export function ThemeToggle() {
           />
         </svg>
         <svg
-          className={cn(
-            'absolute inset-0 h-5 w-5 transition-all duration-300',
+          className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${
             mounted && !dark
               ? 'translate-y-0 rotate-0 opacity-100'
-              : 'translate-y-full -rotate-90 opacity-0',
-          )}
+              : 'translate-y-full -rotate-90 opacity-0'
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
