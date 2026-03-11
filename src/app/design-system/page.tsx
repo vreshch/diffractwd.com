@@ -34,13 +34,13 @@ const CheckIcon = () => (
   </svg>
 );
 
-/* ─── Favicon Variants (32×32 viewBox, shown at 10× zoom) ─── */
+/* ─── Favicon Variants (32×32 viewBox, shown at 5× zoom) ─── */
 
 function FaviconVariantsSection() {
   return (
-    <Section id="favicon" title="App Icon" subtitle="Overlay pattern — solid top trace + half-opacity bottom trace (32×32 native, 10× zoom)">
+    <Section id="favicon" title="App Icon" subtitle="Overlay pattern — solid top trace + half-opacity bottom trace (32×32 native, 5× zoom)">
       <div className="inline-block rounded-2xl border border-border bg-white p-4 shadow-sm dark:border-dark-border dark:bg-dark-surface">
-        <svg viewBox="0 0 32 32" className="h-[320px] w-[320px]">
+        <svg viewBox="0 0 32 32" className="h-[160px] w-[160px]">
           <rect width="32" height="32" rx="6" fill="#1e3a5f" />
           <polyline points="4 13 8 10.5 11 6 13.5 10.5 16 13 20 8.5 22.5 13 26 10.5 28 13" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <polyline points="4 22 8 19.5 11 15 13.5 19.5 16 22 20 17.5 22.5 22 26 19.5 28 22" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
