@@ -34,6 +34,22 @@ const CheckIcon = () => (
   </svg>
 );
 
+/* ─── Favicon Variants (32×32 viewBox, shown at 20× zoom) ─── */
+
+function FaviconVariantsSection() {
+  return (
+    <Section id="favicon" title="App Icon" subtitle="Overlay pattern — solid top trace + half-opacity bottom trace (32×32 native, 20× zoom)">
+      <div className="inline-block rounded-2xl border border-border bg-white p-4 shadow-sm dark:border-dark-border dark:bg-dark-surface">
+        <svg viewBox="0 0 32 32" className="h-[640px] w-[640px]">
+          <rect width="32" height="32" rx="6" fill="#1e3a5f" />
+          <polyline points="4 13 8 10.5 11 6 13.5 10.5 16 13 20 8.5 22.5 13 26 10.5 28 13" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <polyline points="4 22 8 19.5 11 15 13.5 19.5 16 22 20 17.5 22.5 22 26 19.5 28 22" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+        </svg>
+      </div>
+    </Section>
+  );
+}
+
 /* ─── Layout Helpers ─── */
 
 function Section({ id, title, subtitle, children }: { id: string; title: string; subtitle: string; children: React.ReactNode }) {
@@ -385,6 +401,8 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
+      <FaviconVariantsSection />
+      <div className="mx-auto max-w-5xl border-t border-border dark:border-dark-border" />
       <ButtonsSection />
       <div className="mx-auto max-w-5xl border-t border-border dark:border-dark-border" />
       <BadgesSection />

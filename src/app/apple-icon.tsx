@@ -39,7 +39,7 @@ export default function AppleIcon() {
             strokeLinecap="round"
             strokeLinejoin="round"
             fill="none"
-            strokeDasharray="4 2"
+            opacity={0.5}
           />
         </svg>
       </div>
