@@ -6,6 +6,58 @@ export const metadata: Metadata = {
   title: 'DiffractWD - Free Powder Diffraction Software',
 };
 
+const DownloadIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+);
+
+/* ─── Buttons ─── */
+
+function HeroButtons() {
+  return (
+    <div className="flex flex-wrap gap-4">
+      <Link
+        href="/downloads/diffractwd.exe"
+        className="cursor-pointer inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-md transition-all hover:bg-white/90 hover:shadow-lg"
+      >
+        <DownloadIcon />
+        Download DiffractWD
+      </Link>
+      <Link
+        href="/documentation"
+        className="cursor-pointer inline-block rounded-lg border-2 border-white px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-primary"
+      >
+        Read Documentation
+      </Link>
+    </div>
+  );
+}
+
+function CtaButtons() {
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-4">
+      <Link
+        href="/downloads/diffractwd.exe"
+        className="cursor-pointer inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-light hover:shadow-lg dark:bg-accent dark:text-white dark:hover:bg-accent-light dark:hover:text-dark-bg"
+      >
+        <DownloadIcon />
+        Download DiffractWD
+      </Link>
+      <Link
+        href="/documentation"
+        className="cursor-pointer inline-block rounded-lg border-2 border-primary px-8 py-3.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white dark:border-accent dark:text-accent dark:hover:bg-accent dark:hover:text-white"
+      >
+        Read Documentation
+      </Link>
+    </div>
+  );
+}
+
+/* ─── Data ─── */
+
 const features = [
   {
     title: 'Multiple Format Support',
@@ -84,13 +136,14 @@ const stats = [
   { value: 'MIT', label: 'License' },
 ];
 
+/* ─── Page ─── */
+
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-light py-24 md:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(59,130,246,0.15),_transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary to-primary-light py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-col items-center gap-12 md:flex-row">
             <div className="flex-1">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm">
@@ -107,25 +160,7 @@ export default function HomePage() {
                 Compare measured patterns, simulate from crystal data, and prepare
                 publication-ready figures — no crystallographic background required.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="/downloads/diffractwd.exe"
-                  className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-3.5 text-sm font-semibold text-primary shadow-md transition-all hover:bg-white/90 hover:shadow-lg"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Download v1.30
-                </a>
-                <Link
-                  href="/screenshots"
-                  className="inline-block rounded-lg border-2 border-white px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-white hover:text-primary"
-                >
-                  View Screenshots
-                </Link>
-              </div>
+              <HeroButtons />
             </div>
             <div className="flex-shrink-0">
               <div className="relative">
@@ -178,7 +213,7 @@ export default function HomePage() {
                 key={feature.title}
                 className="group rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-dark-border dark:bg-dark-surface dark:shadow-none dark:hover:bg-dark-surface-alt"
               >
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
                   {feature.icon}
                 </div>
                 <h3 className="mb-2 text-base font-semibold text-heading dark:text-dark-text">
@@ -226,25 +261,7 @@ export default function HomePage() {
           <p className="mb-8 text-muted dark:text-dark-text-secondary">
             Windows XP, Vista, or Windows 7. Requires .NET Framework 2.0.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="/downloads/diffractwd.exe"
-              className="inline-flex items-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:bg-primary-light hover:shadow-lg dark:bg-accent-light dark:text-dark-bg dark:hover:bg-accent"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download DiffractWD
-            </a>
-            <Link
-              href="/documentation"
-              className="inline-block rounded-lg border-2 border-primary px-8 py-3.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white dark:border-accent-light dark:text-accent-light dark:hover:bg-accent-light dark:hover:text-dark-bg"
-            >
-              Read Documentation
-            </Link>
-          </div>
+          <CtaButtons />
         </div>
       </section>
     </div>

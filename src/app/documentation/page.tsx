@@ -140,7 +140,7 @@ export default function DocumentationPage() {
       {/* Quick Start */}
       <section className="mb-20">
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
@@ -185,7 +185,7 @@ export default function DocumentationPage() {
       {/* File Formats */}
       <section className="mb-20">
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
               <polyline points="14 2 14 8 20 8" />
@@ -197,12 +197,12 @@ export default function DocumentationPage() {
         </div>
         <div className="overflow-hidden rounded-xl border border-border dark:border-dark-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-surface-alt dark:bg-dark-surface-alt">
+            <thead className="bg-primary/5 dark:bg-dark-surface-alt">
               <tr>
-                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-muted dark:text-dark-text-secondary">
+                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-primary/70 dark:text-dark-text-secondary">
                   Category
                 </th>
-                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-muted dark:text-dark-text-secondary">
+                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-primary/70 dark:text-dark-text-secondary">
                   Formats
                 </th>
               </tr>
@@ -229,7 +229,7 @@ export default function DocumentationPage() {
       {/* Capabilities */}
       <section className="mb-20">
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <polyline points="9 11 12 14 22 4" />
               <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
@@ -258,7 +258,7 @@ export default function DocumentationPage() {
       <div className="mb-20 grid gap-6 md:grid-cols-2">
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                 <line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
@@ -284,7 +284,7 @@ export default function DocumentationPage() {
 
         <section>
           <div className="mb-4 flex items-center gap-3">
-            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" />
               </svg>
@@ -319,7 +319,7 @@ export default function DocumentationPage() {
       {/* Modules */}
       <section>
         <div className="mb-8 flex items-center gap-3">
-          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-accent-light/15 text-accent-light dark:bg-accent/10 dark:text-accent-light">
+          <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
               <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
@@ -332,12 +332,12 @@ export default function DocumentationPage() {
         </div>
         <div className="overflow-hidden rounded-xl border border-border dark:border-dark-border">
           <table className="w-full text-left text-sm">
-            <thead className="bg-surface-alt dark:bg-dark-surface-alt">
+            <thead className="bg-primary/5 dark:bg-dark-surface-alt">
               <tr>
-                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-muted dark:text-dark-text-secondary">
+                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-primary/70 dark:text-dark-text-secondary">
                   Module
                 </th>
-                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-muted dark:text-dark-text-secondary">
+                <th className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-primary/70 dark:text-dark-text-secondary">
                   Purpose
                 </th>
               </tr>
