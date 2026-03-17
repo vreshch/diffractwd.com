@@ -125,7 +125,11 @@ jobs:
             # Deploy to Docker Swarm
             echo "🐳 Deploying stack..."
             docker stack deploy -c docker-compose.yml diffractwd --with-registry-auth
-            
+
+            # Force service update to ensure new image is pulled and containers restart
+            echo "🔄 Forcing service update..."
+            docker service update --force --with-registry-auth diffractwd_web
+
             # Wait for deployment
             echo "⏳ Waiting for service to be ready..."
             sleep 15
@@ -153,8 +157,8 @@ jobs:
             echo "⏳ Attempt $i/30 — got: ${LIVE_COMMIT:-no response}, want: ${EXPECTED:0:8}"
             sleep 10
           done
-          echo "⚠️ Could not verify deployment within 5 minutes"
-          echo "deployment-status=warning" >> $GITHUB_OUTPUT
+          echo "❌ Deployment verification failed — live version does not match expected commit"
+          exit 1
 
       - name: 🧹 Cleanup
         if: always()
