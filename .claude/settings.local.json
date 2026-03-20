@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:lucide.dev)",
+      "WebFetch(domain:tabler.io)",
+      "WebFetch(domain:unpkg.com)",
+      "WebFetch(domain:crystalmaker.com)",
+      "WebFetch(domain:www.xpowder.com)",
+      "Bash(npm run:*)",
+      "Bash(gh api:*)"
+    ]
+  }
+}
