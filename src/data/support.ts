@@ -32,19 +32,12 @@ export const changelog = [
   {
     version: '1.02',
     date: '16 June 2010',
-    changes: [
-      'Installation package available',
-      'Native file format support',
-      'Several bug fixes',
-    ],
+    changes: ['Installation package available', 'Native file format support', 'Several bug fixes'],
   },
   {
     version: '1.01',
     date: '6 June 2010',
-    changes: [
-      'Precompiled package available',
-      'Source code (C#) available for download',
-    ],
+    changes: ['Precompiled package available', 'Source code (C#) available for download'],
   },
   {
     version: '1.00',

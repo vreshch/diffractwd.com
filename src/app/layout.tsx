@@ -16,12 +16,8 @@ export const metadata: Metadata = {
     'DiffractWD, powder diffraction software, powder pattern simulation, X-ray diffraction, crystallography, powder data visualization, free science software',
   authors: [{ name: 'Volodymyr D. Vreshch' }],
   icons: {
-    icon: [
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [
-      { url: '/apple-icon', type: 'image/png', sizes: '180x180' },
-    ],
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-icon', type: 'image/png', sizes: '180x180' }],
   },
   openGraph: {
     type: 'website',
@@ -30,7 +26,9 @@ export const metadata: Metadata = {
     description:
       'Free open-source software for powder diffraction pattern manipulation, simulation, and visualization.',
     url: siteUrl,
-    images: [{ url: '/hero.jpg', width: 1200, height: 630, alt: 'DiffractWD application screenshot' }],
+    images: [
+      { url: '/hero.jpg', width: 1200, height: 630, alt: 'DiffractWD application screenshot' },
+    ],
   },
   alternates: {
     canonical: '/',

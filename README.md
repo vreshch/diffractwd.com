@@ -8,12 +8,12 @@ Website for the DiffractWD application — a free and open-source tool for powde
 
 ## Technologies
 
-* React 19 & TypeScript
-* Next.js 15 (App Router)
-* Tailwind CSS 4
-* Vitest & Playwright for testing
-* Docker with Traefik reverse proxy
-* GitHub Actions CI/CD
+- React 19 & TypeScript
+- Next.js 15 (App Router)
+- Tailwind CSS 4
+- Vitest & Playwright for testing
+- Docker with Traefik reverse proxy
+- GitHub Actions CI/CD
 
 ## Quick Start
 
@@ -26,18 +26,18 @@ npm run dev
 
 ## Available Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local development server |
-| `npm run build` | Build for production |
-| `npm start` | Start production server (port 3001) |
-| `npm run lint` | Run ESLint |
-| `npm run format` | Format code with Prettier |
-| `npm test` | Run unit tests (Vitest) |
-| `npm run test:watch` | Run unit tests in watch mode |
-| `npm run test:e2e` | Run E2E tests (Playwright) |
-| `npm run test:e2e:ui` | Run E2E tests with UI |
-| `npm run verify` | Full verification (type check, lint, build, test) |
+| Command               | Description                                       |
+| --------------------- | ------------------------------------------------- |
+| `npm run dev`         | Start local development server                    |
+| `npm run build`       | Build for production                              |
+| `npm start`           | Start production server (port 3001)               |
+| `npm run lint`        | Run ESLint                                        |
+| `npm run format`      | Format code with Prettier                         |
+| `npm test`            | Run unit tests (Vitest)                           |
+| `npm run test:watch`  | Run unit tests in watch mode                      |
+| `npm run test:e2e`    | Run E2E tests (Playwright)                        |
+| `npm run test:e2e:ui` | Run E2E tests with UI                             |
+| `npm run verify`      | Full verification (type check, lint, build, test) |
 
 ## Docker
 
@@ -52,5 +52,5 @@ Production deployment uses Docker Swarm with Traefik for automatic HTTPS.
 
 ## Contacts
 
-* Website: [vreshch.com](https://vreshch.com)
-* Email: vreshch@gmail.com
+- Website: [vreshch.com](https://vreshch.com)
+- Email: vreshch@gmail.com
