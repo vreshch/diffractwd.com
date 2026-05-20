@@ -31,6 +31,13 @@ export const metadata: Metadata = {
       { url: '/hero.jpg', width: 1200, height: 630, alt: 'DiffractWD application screenshot' },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DiffractWD - Free Powder Diffraction Software',
+    description:
+      'Free open-source software for powder diffraction pattern manipulation, simulation, and visualization.',
+    images: ['/hero.jpg'],
+  },
   alternates: {
     canonical: '/',
   },
