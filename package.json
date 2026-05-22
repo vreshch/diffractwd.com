@@ -47,8 +47,8 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^22.19.19",
-    "@types/react": "^19.1.4",
-    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@types/react": "^19.2.15",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
     "@typescript-eslint/parser": "^8.33.1",
     "@vitejs/plugin-react": "^5.2.0",
     "autoprefixer": "^10.5.0",
@@ -58,10 +58,10 @@
     "jsdom": "^28.1.0",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
-    "postcss": "^8.5.14",
+    "postcss": "^8.5.15",
     "prettier": "^3.8.3",
     "tailwindcss": "^4.1.8",
     "typescript": "5.9.3",
-    "vitest": "^4.1.6"
+    "vitest": "^4.1.7"
   }
 }
