@@ -12,6 +12,10 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV HOSTNAME=0.0.0.0
 ENV PORT=3001
+# ARGs don't cross stage boundaries; redeclare so /health reads real provenance at runtime.
+ARG COMMIT_SHA="" BUILD_TIME=""
+ENV COMMIT_SHA=${COMMIT_SHA}
+ENV BUILD_TIME=${BUILD_TIME}
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
