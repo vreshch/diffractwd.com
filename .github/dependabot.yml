@@ -5,8 +5,8 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'friday'
-      time: '18:00'
-      timezone: 'Europe/Prague'
+      time: '16:07'
+      timezone: 'Etc/UTC'
     assignees:
       - 'vreshch'
     open-pull-requests-limit: 10
@@ -23,8 +23,8 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'friday'
-      time: '18:00'
-      timezone: 'Europe/Prague'
+      time: '16:07'
+      timezone: 'Etc/UTC'
     assignees:
       - 'vreshch'
     open-pull-requests-limit: 5
@@ -38,8 +38,8 @@ updates:
     schedule:
       interval: 'weekly'
       day: 'friday'
-      time: '18:00'
-      timezone: 'Europe/Prague'
+      time: '16:07'
+      timezone: 'Etc/UTC'
     assignees:
       - 'vreshch'
     open-pull-requests-limit: 5
