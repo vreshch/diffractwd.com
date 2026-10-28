@@ -2,6 +2,10 @@ node_modules
 dist
 build
 .next
+out
 coverage
 package-lock.json
 *.snap
+playwright-report
+test-results
+next-env.d.ts
