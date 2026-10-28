@@ -27,17 +27,23 @@ services:
         # HTTP Router (redirect to HTTPS, but allow ACME challenges)
         - traefik.http.routers.diffractwd-http.rule=Host(`diffractwd.com`) || Host(`www.diffractwd.com`)
         - traefik.http.routers.diffractwd-http.entrypoints=http
-        - traefik.http.routers.diffractwd-http.middlewares=https-redirect
+        - traefik.http.routers.diffractwd-http.middlewares=diffractwd-www-to-apex,https-redirect
 
         # Create HTTPS redirect middleware that allows ACME challenges
         - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
         - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+
+        # www -> apex (permanent, path preserved)
+        - traefik.http.middlewares.diffractwd-www-to-apex.redirectregex.regex=^https?://www\.diffractwd\.com/(.*)
+        - traefik.http.middlewares.diffractwd-www-to-apex.redirectregex.replacement=https://diffractwd.com/$${1}
+        - traefik.http.middlewares.diffractwd-www-to-apex.redirectregex.permanent=true
 
         # HTTPS Router
         - traefik.http.routers.diffractwd-https.rule=Host(`diffractwd.com`) || Host(`www.diffractwd.com`)
         - traefik.http.routers.diffractwd-https.entrypoints=https
         - traefik.http.routers.diffractwd-https.tls=true
         - traefik.http.routers.diffractwd-https.tls.certresolver=letsencrypt
+        - traefik.http.routers.diffractwd-https.middlewares=diffractwd-www-to-apex
 
         # Service configuration
         - traefik.http.services.diffractwd.loadbalancer.server.port=3001
