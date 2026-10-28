@@ -7,7 +7,7 @@ set -e
 
 # Configuration
 IMAGE_TAG="${1:-latest}"
-IMAGE="ghcr.io/vreshch/diffractwd.com:${IMAGE_TAG}"
+IMAGE="ghcr.io/chemistry/diffractwd.com:${IMAGE_TAG}"
 STACK_NAME="diffractwd"
 COMPOSE_FILE="/opt/diffractwd-com/docker-compose.yml"
 VERSION_FILE="/opt/diffractwd-com/.deployed-version"

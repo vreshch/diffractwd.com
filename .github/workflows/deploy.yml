@@ -21,7 +21,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: vreshch/diffractwd.com
+  IMAGE_NAME: chemistry/diffractwd.com
 
 jobs:
   build-and-push:
@@ -235,7 +235,7 @@ jobs:
 
             **Details:**
             - **Image Tag:** \`${imageTag}\`
-            - **Registry:** ghcr.io/vreshch/diffractwd.com
+            - **Registry:** ghcr.io/chemistry/diffractwd.com
             - **Server:** diffractwd.com
             - **Deployment URL:** https://diffractwd.com
 

@@ -12,7 +12,7 @@
   "homepage": "https://diffractwd.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vreshch/diffractwd.com.git"
+    "url": "git+https://github.com/chemistry/diffractwd.com.git"
   },
   "license": "MIT",
   "engines": {
