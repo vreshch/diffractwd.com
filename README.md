@@ -1,7 +1,7 @@
 # Website for DiffractWD [diffractwd.com](https://diffractwd.com)
 
-[![Deploy to Production](https://github.com/vreshch/diffractwd.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/vreshch/diffractwd.com/actions/workflows/deploy.yml)
-[![PR Validation](https://github.com/vreshch/diffractwd.com/actions/workflows/pr-validation.yml/badge.svg)](https://github.com/vreshch/diffractwd.com/actions/workflows/pr-validation.yml)
+[![Deploy to Production](https://github.com/chemistry/diffractwd.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/chemistry/diffractwd.com/actions/workflows/deploy.yml)
+[![PR Validation](https://github.com/chemistry/diffractwd.com/actions/workflows/pr-validation.yml/badge.svg)](https://github.com/chemistry/diffractwd.com/actions/workflows/pr-validation.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Website for the DiffractWD application — a free and open-source tool for powder diffraction analysis and visualization.

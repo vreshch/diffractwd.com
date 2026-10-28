@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **diffractwd.com** — Product website for DiffractWD, an X-ray diffraction analysis tool.
 
-**Repository:** `vreshch/diffractwd.com`
+**Repository:** `chemistry/diffractwd.com`
 **Default Branch:** `master`
 **Framework:** Next.js 15 App Router
 
